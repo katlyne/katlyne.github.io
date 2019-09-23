@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One&display=swap');
 body {
     font-size: 18px;
     line-height: 1.5;
@@ -13,14 +13,15 @@ footer {
     background-color: rgb(41, 128, 168);
     color: #fff;
     text-align: center;
+    border-radius: 3em; 
 }
 
 header {
     padding: 1.5rem;
     background-color: rgb(41, 128, 168);
     color: #fff;
-    /*font-family: 'Merriweather', 'serif'; */
-    
+    font-family: 'Fredoka One', 'serif';
+    border-radius: 3em;
 }
 
 img {
@@ -29,4 +30,10 @@ img {
     margin-top: -4em;
     border: 1px solid #000;
 
+}
+ul a:link {
+    color: rgb(41, 128, 168);
+}
+ul a:visited {
+    color: rgb(7, 26, 196);
 }
