@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans&display=swap');
+@import "/css/normalize.css";
+
+header, nav, main,footer {
+    margin: 1.25rem auto;
+    max-width: 760px;
+}
+h1 {
+    font-weight: 900;
+    font-size: 1.8rem;
+    margin: 0.15rem;
+}
+
+footer {
+    background-color: rgb(41, 128, 168);
+    color: #fff;
+    text-align: center;
+    border-radius: 3em; 
+    clear: both;
+    font-size: 0.8em;
+}
+
+header {
+    padding: 1.5rem;
+    background-color: rgb(41, 128, 168);
+    color: #fff;
+    font-family: 'Fredoka One', 'serif';
+    border-radius: 3em;
+    font-size: 0.8em;
+    text-align:center;
+}
+
+.profil {
+    float:right;
+    margin: 10px;
+    margin-top: -4em;
+    border: 1px solid #000;
+
+}
+ul a:link, a:visited {
+    color: rgb(7, 26, 196);
+}
+
+h2, h3, h4, h5, h6 {
+    color: #000;
+    margin: 1em 1em 1em 0em;
+}
+body{
+    font-size: 18px; /* This is now 1rem */
+    font-family: 'Fira Sans', sans-serif;
+    color: #333;
+}
+/*phone view*/
+.title-header {
+    font-size: 0.8em;
+    padding: 1em;
+    margin: .5em 0 .5em 0;
+    border-radius: 1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+.main-container {
+    max-width: 775px;
+    margin: 1.3em auto 1.3em auto;
+    padding: 1.2em;
+    border-radius: 1em;
+    background-color: #fff;
+}
+main section {
+    margin:0.25rem;
+	border-radius: 1rem;
+	padding: 0 1rem;
+	background-color: #e0d3d3;
+}
+section:nth-child(1) {
+    display: block;
+    margin: 0.5rem;
+    border-radius: 1em;
+}
+section:nth-child(2) {
+    display: block;
+    margin: 0.5rem;
+    border-radius: 1em;
+}
+section:nth-child(3) {
+    display: block;
+    margin: 0.5rem;
+    border-radius: 1em;
+}
+.colimage {
+    width: 100%;
+    border: .2em #bbbbbb;
+}
+main {
+    max-width: 760px;
+	grid-template-columns: 1fr;
+	font-size: 1rem;
+}

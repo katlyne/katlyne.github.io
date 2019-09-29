@@ -1,0 +1,65 @@
+@import "/css/normalize.css";
+
+body {
+    font-size: 16px;
+    
+}
+/* phone or baseline views
+*****************************/
+main {
+    max-width: 760px;
+    margin: 1em;
+}
+h2 {
+    color: #ffffff;
+    background-color: navy;
+}
+
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    font-size: 1rem;
+  }
+    section:nth-child(1) {
+        display: block;
+        margin: 0.5rem;
+        border-radius: 1em;
+    }
+    section:nth-child(2) {
+        display: block;
+        margin: 0.5rem;
+        border-radius: 1em;
+    }
+    section:nth-child(3) {
+        display: block;
+        margin: 0.5rem;
+        border-radius: 1em;
+    }
+    
+    h1,h2,h3,h4,h5,h6 {
+        font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+        
+    }
+    
+.main-container {
+    max-width: 775px;
+    margin: 1.3em auto 1.3em auto;
+    padding: 1.2em;
+    border-radius: 1em;
+    background-color: rgb(35, 112, 255);
+}
+.title-header {
+    font-size: 3.5vw;
+    padding: 1em;
+    margin: .5em 0 .5em 0;
+    background-color: white;
+    border-radius: 1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+.colimage {
+    border-radius: 1em;
+    width: 100%;
+    border: .2em #bbbbbb;
+}

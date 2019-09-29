@@ -1,0 +1,48 @@
+/*@media only screen and (min-width: 32.1m) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    footer, header {
+        border-radius: 10px; 
+    }
+
+    header img {
+        box-shadow:0 0 30px #444;
+        float:right;
+        border-radius: 0 10px 0 0;
+    }
+}*/
+@media only screen and (min-width: 37.5em) {
+	header {
+		font-size: 3vw;
+	}
+	main {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	main section:nth-child(1) {
+		display: block;
+	}
+	main section:nth-child(2) {
+		display: block;
+	}
+
+	main section:nth-child(3) {
+		display: block;
+	}
+
+	main picture {
+		display: block;
+	}
+	main section picture img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+
