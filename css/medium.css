@@ -22,14 +22,8 @@
 		font-size: 3vw;
 	}
 	main {
+		display:grid;
 		grid-template-columns: 1fr 1fr;
-	}
-
-	main section:nth-child(1) {
-		display: block;
-	}
-	main section:nth-child(2) {
-		display: block;
 	}
 
 	main section:nth-child(3) {
