@@ -1,0 +1,11 @@
+@media only screen and (min-width: 32.1em) {
+	header {
+		font-size: 3vw;
+	}
+	main {
+		display: block;
+		text-align: center;
+	}
+}
+
+

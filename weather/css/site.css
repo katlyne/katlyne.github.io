@@ -1,8 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Baloo&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+@import "/css/normalize.css";
 html {
     background-color: #28A7D6;
+  }
+  header, nav, main,footer {
+    margin: 1.25rem auto;
+    max-width: 760px;
+  }
+  h1 {
+    font-weight: 900;
+    font-size: 1.8rem;
+    margin: 0.15rem;
   }
   body {
     max-width: 940px;
@@ -16,7 +25,7 @@ html {
     max-width: 100%;
   }
   h2 {
-    font-family: 'Lora', 'Ariel', 'sans-serif';
+    font-family: 'Lora','sans-serif';
     color: #890000;
     border-top: 5px double;
     border-bottom: 5px double;
@@ -26,7 +35,6 @@ h3, h4, h5, h6 {
     color: #890000;
   }
 footer {
-    font-family: 'Lora' 'Helvetica', 'sans-serif';
     padding:0.5rem;
     background-color: #F7C01D;
     color: #0056BF;
@@ -90,7 +98,8 @@ p {
   }
   nav > ul {
     list-style-type: none;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(6em,1fr));
   
   }
   nav a {
@@ -104,3 +113,28 @@ p {
     color: #0056BF;
     background-color: #E7C24F;
   }
+  /*phone view*/
+.title-header {
+  font-size: 0.8em;
+  padding: 1em;
+  margin: .5em 0 .5em 0;
+  border-radius: 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main-container {
+  max-width: 775px;
+  margin: 1.3em auto 1.3em auto;
+  padding: 1.2em;
+  border-radius: 1em;
+}
+main section {
+margin:0.25rem;
+border-radius: 1rem;
+padding: 0 1rem;
+}
+main {
+max-width: 760px;
+grid-template-columns: 1fr;
+font-size: 1rem;
+}

@@ -1,0 +1,28 @@
+/* Desktop Views ****************************/
+@media only screen and (min-width: 721px) {
+	main {
+		display: block;
+		text-align: center;
+	}
+	/*
+	.sitegrid {
+		display: block;
+		text-align: center;
+
+	}
+
+	.typography {
+		display: block;
+		text-align: center;
+	}
+
+	.colors {
+		display: block;
+		text-align: center;
+	}
+
+	.audience {
+		display: block;
+		text-align: center;
+	}*/
+}

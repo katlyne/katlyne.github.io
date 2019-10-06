@@ -8,4 +8,7 @@
 	main section:nth-child(3) {
 		grid-column: span 1;
 	}
+	img {
+		float: right;
+	}
 }
