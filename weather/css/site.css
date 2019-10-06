@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Baloo&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+html {
+    background-color: #28A7D6;
+  }
+  body {
+    max-width: 940px;
+    margin: 0 auto;
+    padding:1em;
+    background-color: white;
+    border-radius: 3em;
+    
+  }
+  img {
+    max-width: 100%;
+  }
+  h2 {
+    font-family: 'Lora', 'Ariel', 'sans-serif';
+    color: #890000;
+    border-top: 5px double;
+    border-bottom: 5px double;
+  }
+h3, h4, h5, h6 {
+    font-family: 'Lora', 'Ariel', 'sans-serif';
+    color: #890000;
+  }
+footer {
+    font-family: 'Lora' 'Helvetica', 'sans-serif';
+    padding:0.5rem;
+    background-color: #F7C01D;
+    color: #0056BF;
+    text-align: center;
+    border-radius: 3em; 
+    clear: both;
+    font-size: 1.2em;
+}
+
+header {
+    font-family: 'Baloo', 'Helvetica', 'sans-serif';
+    padding: 1.5rem;
+    background-color: #F7C01D;
+    color: #0056BF;
+    border-radius: 3em;
+    font-size: 1.3em;
+    text-align:center;
+}
+p {
+    font-family: 'Baloo', 'Helvetica', 'sans-serif';
+    color: black;
+    padding: 1em;
+  }
+  main li {
+    font-family: 'Baloo', 'Helvetica', 'sans-serif';
+    color: black;
+  }
+  .colors {
+    width: 100%;
+    min-width: 350px;
+    margin: auto;
+    text-align: center;
+  }
+  .colors th {
+    background-color: rgb(240, 230, 176);
+  }
+  .colors td{
+    width: 25%;
+    height: 3em;
+  }
+  
+  .primary {
+    background-color: #28A7D6;
+  }
+  .secondary {
+    background-color: #F7C01D;
+  }
+  .accent1 {
+    background-color: #890000;
+  }
+  .accent2{
+    background-color: #0056BF;
+  }
+
+  nav {
+    background-color:#F7C01D;
+    line-height: 3em;
+    text-align: center;
+    font-size: 1.2em;
+    border-radius: 3em;
+  }
+  nav > ul {
+    list-style-type: none;
+    display: flex;
+  
+  }
+  nav a {
+    padding:1em;
+    min-width: 70px;
+  }
+  nav a:link, nav a:visited {
+    color: #0056BF;
+  }
+  nav a:hover {
+    color: #0056BF;
+    background-color: #E7C24F;
+  }
