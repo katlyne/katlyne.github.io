@@ -21,7 +21,7 @@ html {
     border-radius: 3em;
     
   }
-  img {
+  .img {
     max-width: 100%;
   }
   h2 {
@@ -112,7 +112,11 @@ p {
   nav a:hover {
     color: #0056BF;
     background-color: #E7C24F;
+  
   }
+
+ 
+
   /*phone view*/
 .title-header {
   font-size: 0.8em;
