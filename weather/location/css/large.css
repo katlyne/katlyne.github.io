@@ -1,0 +1,26 @@
+/* Desktop Views ****************************/
+@media only screen and (min-width: 721px) {
+/*
+	main {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	main section:nth-child(3) {
+		grid-column: span 1;
+	}
+	img {
+		float: right;
+	}
+
+	.home{
+		display: block;
+	}*/
+nav > ul {
+    list-style-type: none;
+    display:flex;
+   justify-content: space-evenly; /*large screen only*/
+  }
+
+
+}

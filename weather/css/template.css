@@ -37,7 +37,7 @@ h3, h4, h5, h6 {
 footer {
     padding:0.5rem;
     background-color: #F7C01D;
-    color: #1f3551;
+    color: #0056BF;
     text-align: center;
     border-radius: 3em; 
     clear: both;
@@ -89,10 +89,6 @@ p {
   .accent2{
     background-color: #0056BF;
   }
-  .accent3 {
-    background-color: #1f3551;
-  }
-
 
   nav {
     background-color:#F7C01D;
@@ -105,14 +101,15 @@ p {
   nav > ul {
     list-style-type: none;
     display:flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    /*justify-content: space-evenly; large screen only*/
   }
   nav a {
     padding:1em;
     min-width: 70px;
   }
   nav a:link, nav a:visited {
-    color: #1f3551;
+    color: #0056BF;
   }
   nav a:hover {
     color: #0056BF;
@@ -121,9 +118,14 @@ p {
   }
 
  .littlelogo {
-   max-width: 10vw;
+   max-width: 14vw;
+   float: left;
 
  }
+#home nav a [title~= audience],
+#home nav a [title~= typography],
+#home nav a [title~=],
+#home nav a [title~= audience],
 
   /*phone view*/
 .title-header {

@@ -63,36 +63,6 @@ p {
     font-family: 'Baloo', 'Helvetica', 'sans-serif';
     color: black;
   }
-  .colors {
-    width: 100%;
-    min-width: 350px;
-    margin: auto;
-    text-align: center;
-  }
-  .colors th {
-    background-color: rgb(240, 230, 176);
-  }
-  .colors td{
-    width: 25%;
-    height: 3em;
-  }
-  
-  .primary {
-    background-color: #28A7D6;
-  }
-  .secondary {
-    background-color: #F7C01D;
-  }
-  .accent1 {
-    background-color: #890000;
-  }
-  .accent2{
-    background-color: #0056BF;
-  }
-  .accent3 {
-    background-color: #1f3551;
-  }
-
 
   nav {
     background-color:#F7C01D;
