@@ -6,10 +6,7 @@ html {
   background-color: #28A7D6;
 }
 
-header,
-nav,
-main,
-footer {
+header,nav,main,footer {
   margin: 1.25rem auto;
   max-width: 760px;
 }
@@ -36,10 +33,7 @@ h2 {
   border-bottom: 5px double;
 }
 
-h3,
-h4,
-h5,
-h6 {
+h3,h4,h5,h6 {
   font-family: 'Lora', 'Ariel', 'sans-serif';
   color: #890000;
 }
@@ -61,8 +55,27 @@ header {
   color: #0056BF;
   border-radius: 3em;
   font-size: 1.3em;
-  align-items: center;
+  align-items: left;
   overflow: hidden;
+}
+
+.littlelogo {
+  max-width: 22vw;
+  float: left;
+}
+.logo-box {
+  display: flex;
+  flex-direction: row;
+}
+
+header section h1 {
+  font-size: 3vw;
+  margin: 0;
+}
+
+header section span {
+  font-size: .8em;
+  font-style: italic;
 }
 
 p {
@@ -132,17 +145,6 @@ nav {
   display: block;
 }
 
-.littlelogo {
-  max-width: 20vw;
-  float: left;
-
-}
-
-.logo-box {
-  background-color: #F7C01D;
-  float: left;
-}
-
 /*phone view*/
 .title-header {
   font-size: 0.8em;
@@ -184,3 +186,14 @@ nav {
   margin: 0.5rem;
   border-radius: 1em;
 }
+
+#siteName {
+font-size: 4vw;
+    
+    margin: 1em 0 1em 0;
+    
+    border-radius: 1em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+ 
