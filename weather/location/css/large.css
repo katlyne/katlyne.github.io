@@ -11,10 +11,14 @@
 
 	header {
 		display: flex;
+		flex-direction: left;
 	}
 
 	.littlelogo {
 		float: none;
+		max-width: 30%;
+		margin: 0;
+		padding: 0;
 	}
 
 	nav>ul {
@@ -48,5 +52,17 @@
 	nav ul.hide {
 		display: block;
 	}
+	h1 {
+		font-size: 0.6em;
+		margin: 0;
+	  }
+	  
+	  .tagline {
+		font-size: 0.8em;
+		font-style: italic;
+	  }
+	  .logo-box {
+		  display:flex;
+		  flex-direction: row;
+	  }
 	
-}
