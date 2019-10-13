@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+/*@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Baloo&display=swap');
 @import "/css/normalize.css";
-
+*/
 html {
   background-color: #28A7D6;
 }
@@ -55,7 +55,6 @@ header {
   color: #0056BF;
   border-radius: 3em;
   font-size: 1.3em;
-  align-items:left;
   overflow: hidden;
 }
 
