@@ -8,58 +8,62 @@
     <title>Home katlyne.github.io</title>
     <meta name="author" content="Katlyne Chinain">
     <meta name="description" content="Preston">
+    <link href="/css/normalize.css" rel="stylesheet">
     <link href="/weather/location/css/small.css" rel="stylesheet" media="screen">
-    <link href="/weather/location/css/medium.css" rel="stylesheet" media="screen and (min-width: 32.1rem)">
-    <link href="/weather/location/css/large.css" rel="stylesheet" media="screen and (min-width: 721px)">
+    <link href="/weather/location/css/medium.css" rel="stylesheet" media="screen and (min-width: 32.5em)">
+    <link href="/weather/location/css/large.css" rel="stylesheet" media="screen and (min-width: 1024x)">
 
 </head>
 
 <body id="home">
     <div id="wrapper">
         <header>
+            <div class="logo-box">
+                <img class="littlelogo" src="/weather/images/logo.png" alt="logo picture">
+            </div>
+            <div class="nom">
             <div id="siteName">Weathumbrella</div>
-            <img class="littlelogo" src="/weather/images/logo.png" alt="logo picture">
             <span id="tagline">100% Accurate</span>
+            </div>
         </header>
         <nav>
-            <ul>
+           
+            <ul class="navigation">
+                <li><a href="#" onclick="toggleMenu()">&#9776; Menu</a> </li>
                 <li><a href="/index.html" title="go to Home">Home</a></li>
                 <li><a href="/weather/location/preston.html" title="go to Preston page">Preston</a></li>
                 <li><a href="/weather/docs/index.html" title="go to Site Site-Plan">Site-Plan</a></li>
             </ul>
         </nav>
-        <main>
-            <section id="location">
-                <h1>Town Name</h1>
-                <p>GPS coordinates go here</p>
+        <main class="main-container">
+            <section class="location">
+                <h1>Preston</h1>
+                <h2>GPS Coordinates</h2>
+                <p>42.0963° N, 111.8766° W</p>
             </section>
-            <section class="wd" id="now">
+            <section class="current">
+                <h2>Current Conditions</h2>
                 <p>Current conditions go here</p>
             </section>
-            <section class="wd" id="temps">
+            <div class="boites">
+            <section class="temperatures">
+                <h2>Forecast Temperatures</h2>
                 <p>Forecast temperatures go here</p>
             </section>
-            <section class="wd" id="precip">
+            <section class="precipitation">
+                <h2>Precipitation Informations</h2>
                 <p>Precipitation info goes here</p>
             </section>
-            <section class="wd" id="conditions">
+            <section class="conditions">
+                <h2>Forecast Conditions</h2>
                 <p>Forecast conditions go here</p>
             </section>
-            <h1>Town Name</h1>
-            <p></p>
-            <h2></h2>
-            <p></p>
-            <h2></h2>
-            <p></p>
-            <h2></h2>
-            <img>
+        </div>
         </main>
-        <footer>
-            &copy; 2019 | Katlyne Chinain | <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5">MDN
-                documentation site</a> | BYUI
-            Last uptated: <span id="currentuptated"></span>
+        <footer class="primaryNav">
+            &copy; 2019 | Weathumbrella
         </footer>
-        <script src="/js/modification.js"></script>
+        <script src="/weather/location/js/script.js"></script>
     </div>
 </body>
 

@@ -1,101 +1,149 @@
 @import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Baloo&display=swap');
 @import "/css/normalize.css";
+
 html {
-    background-color: #28A7D6;
-  }
-  header, nav, main,footer {
-    margin: 1.25rem auto;
-    max-width: 760px;
-  }
-  h1 {
-    font-weight: 900;
-    font-size: 1.8rem;
-    margin: 0.15rem;
-  }
-  body {
-    max-width: 940px;
-    margin: 0 auto;
-    padding:1em;
-    background-color: white;
-    border-radius: 3em;
-    
-  }
-  .img {
-    max-width: 100%;
-  }
-  h2 {
-    font-family: 'Lora','sans-serif';
-    color: #890000;
-    border-top: 5px double;
-    border-bottom: 5px double;
-  }
-h3, h4, h5, h6 {
-    font-family: 'Lora', 'Ariel', 'sans-serif';
-    color: #890000;
-  }
+  background-color: #28A7D6;
+}
+
+header,
+nav,
+main,
 footer {
-    padding:0.5rem;
-    background-color: #F7C01D;
-    color: #1f3551;
-    text-align: center;
-    border-radius: 3em; 
-    clear: both;
-    font-size: 1.2em;
+  margin: 1.25rem auto;
+  max-width: 760px;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 1.8rem;
+  margin: 0.15rem;
+}
+
+body {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 1em;
+  background-color: white;
+  border-radius: 3em;
+
+}
+
+h2 {
+  font-family: 'Lora', 'sans-serif';
+  color: #890000;
+  border-top: 5px double;
+  border-bottom: 5px double;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lora', 'Ariel', 'sans-serif';
+  color: #890000;
+}
+
+footer {
+  padding: 0.5rem;
+  background-color: #F7C01D;
+  color: #1f3551;
+  text-align: center;
+  border-radius: 3em;
+  clear: both;
+  font-size: 1.2em;
 }
 
 header {
-    font-family: 'Baloo', 'Helvetica', 'sans-serif';
-    padding: 1.5rem;
-    background-color: #F7C01D;
-    color: #0056BF;
-    border-radius: 3em;
-    font-size: 1.3em;
-    text-align:center;
-    
+  font-family: 'Baloo', 'Helvetica', 'sans-serif';
+  padding: 1.5rem;
+  background-color: #F7C01D;
+  color: #0056BF;
+  border-radius: 3em;
+  font-size: 1.3em;
+  align-items: center;
+  overflow: hidden;
 }
+
 p {
-    font-family: 'Baloo', 'Helvetica', 'sans-serif';
-    color: black;
-    padding: 1em;
-  }
-  main li {
-    font-family: 'Baloo', 'Helvetica', 'sans-serif';
-    color: black;
-  }
+  font-family: 'Baloo', 'Helvetica', 'sans-serif';
+  color: black;
+  padding: 1em;
+}
 
-  nav {
-    background-color:#F7C01D;
-    line-height: 3em;
-    text-align: center;
-    font-size: 1.2em;
-    border-radius: 3em;
-    
-  }
-  nav > ul {
-    list-style-type: none;
-    display:flex;
-    justify-content: space-evenly;
-  }
-  nav a {
-    padding:1em;
-    min-width: 70px;
-  }
-  nav a:link, nav a:visited {
-    color: #1f3551;
-  }
-  nav a:hover {
-    color: #0056BF;
-    background-color: #E7C24F;
-  
-  }
+main li {
+  font-family: 'Baloo', 'Helvetica', 'sans-serif';
+  color: black;
+}
 
- .littlelogo {
-   max-width: 10vw;
+nav button {
+  margin: 0.2rem 2%;
+  background-color: transparent;
+  border: none;
+  font-size: 1.6rem;
+  color: #1f3551;
 
- }
+}
 
-  /*phone view*/
+nav {
+  background-color: #F7C01D;
+  line-height: 3em;
+  text-align: center;
+  font-size: 1.2em;
+  border-radius: 3em;
+  font-family: 'Baloo', 'Ariel', 'sans-serif';
+}
+
+
+
+.navigation {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+
+.navigation li:first-child {
+  display: block;
+}
+
+.navigation li {
+  display: none;
+}
+
+.navigation a {
+  display: block;
+  color: #0056BF;
+  padding: 0.75rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.navigation a:hover {
+  color: #0056BF;
+  background-color: #E7C24F;
+  font-weight: 300;
+  border-radius: 3em;
+}
+
+/* the onclick JS toggles the .repsonsive class from display none (.navigation li) to display block because the repsonsive class is added to the end of the class list like this in HTML Line #6.
+  <ul class="navigation responsive">
+  */
+.responsive li {
+  display: block;
+}
+
+.littlelogo {
+  max-width: 20vw;
+  float: left;
+
+}
+
+.logo-box {
+  background-color: #F7C01D;
+  float: left;
+}
+
+/*phone view*/
 .title-header {
   font-size: 0.8em;
   padding: 1em;
@@ -104,19 +152,35 @@ p {
   margin-left: auto;
   margin-right: auto;
 }
-.main-container {
+
+.boites {
   max-width: 775px;
   margin: 1.3em auto 1.3em auto;
   padding: 1.2em;
   border-radius: 1em;
 }
-main section {
-margin:0.25rem;
-border-radius: 1rem;
-padding: 0 1rem;
+
+.boites section {
+  margin: 0.25rem;
+  border-radius: 1rem;
+  padding: 0 1rem;
+  background-color: #E7C24F;
 }
-main {
-max-width: 760px;
-grid-template-columns: 1fr;
-font-size: 1rem;
+
+.boites section:nth-child(1) {
+  display: block;
+  margin: 0.5rem;
+  border-radius: 1em;
+}
+
+.boites section:nth-child(2) {
+  display: block;
+  margin: 0.5rem;
+  border-radius: 1em;
+}
+
+.boites section:nth-child(3) {
+  display: block;
+  margin: 0.5rem;
+  border-radius: 1em;
 }
