@@ -49,8 +49,14 @@
                 <p>42.0963° N, 111.8766° W</p>
             </section>
             <section class="current">
-                <h3>Current Conditions</h3>
-                <p>Current conditions go here</p>
+                <div id="current">
+                <div id="currenthotdegree">58&#176;</div>
+                <div id="currentdegree">51&#8457;</div>
+                <div id="currentcolddegree">34&#176;</div>
+                <div id="wind">4.8mph</div>
+                <div id="feels">Feels like 49&#176;</div>
+                <div id="gusts">Gusts: 8mph</div>
+            </div>
             </section>
             <div class="boites">
                 <section class="temperatures">
@@ -124,18 +130,18 @@
                     <h3>Forecast Conditions</h3>
                         <section id="conditions">
                             <div id="circle">
-                            <div id="o1">10</div>
-                            <div id="o2">20</div>
-                            <div id="o3">20</div>
-                            <div id="o4">20</div>
-                            <div id="o5">10</div>
-                            <div id="o6">20</div>
-                            <div id="o7">20</div>
-                            <div id="o8">30</div>
-                            <div id="o9">20</div>
-                            <div id="o10">10</div>
-                            <div id="o11">99</div>
-                            <div id="o12">40</div>
+                            <div id="o1">&#9728;</div>
+                            <div id="o2">&#9729;</div>
+                            <div id="o3">&#9730;</div>
+                            <div id="o4">&#10052;</div>
+                            <div id="o5">&#9728;</div>
+                            <div id="o6">&#9729;</div>
+                            <div id="o7">&#9730;</div>
+                            <div id="o8">&#10052;</div>
+                            <div id="o9">&#9728;</div>
+                            <div id="o10">&#9729; </div>
+                            <div id="o11">&#9730;</div>
+                            <div id="o12">&#10052;</div>
                             <div id="symbol"></div>
                             <div id="i1">1</div>
                             <div id="i2">2</div>
@@ -156,7 +162,8 @@
             </div>
         </main>
         <footer class="primaryNav">
-            &copy; 2019 | Weathumbrella
+            &copy; 2019 | Weathumbrella |
+            <br>
             Today's Date: <span id="currentdate"></span>
         </footer>
         <script src="/weather/location/js/currentdate.js"></script>
