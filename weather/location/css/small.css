@@ -153,6 +153,7 @@ nav {
   margin-left: auto;
   margin-right: auto;
 }
+/*
 .current {
   border: black solid;
   border-radius: 1em;
@@ -160,12 +161,22 @@ nav {
   padding: 1em;
   position: relative; 
   display: block;
+  
+}
+#current {
+  max-width: 775px;
+  margin: 1.3em auto 1.3em auto;
+  border-radius: 1em;
+  padding: 0 1rem;
+  border-radius: 1em;
+  margin: 0.5rem;
+  padding: 1em;
 }
 #currenthotdegree {
   font-family: 'Baloo', 'Helvetica', 'sans-serif';
   font-size:30px;
   color: #890000;
-  position: relative; 
+  position: absolute; 
   left: 20px;
   
 }
@@ -181,7 +192,7 @@ nav {
 #currentdegree {
   font-family: 'Baloo', 'Helvetica', 'sans-serif';
   font-size: 80px;
-  position: relative; 
+  position: absolute; 
   top: -20px;
   left: 300px;
 }
@@ -204,6 +215,8 @@ nav {
   top: 130px;
   left: 600px;
 }
+*/
+
 .boites {
   max-width: 775px;
   margin: 1.3em auto 1.3em auto;
