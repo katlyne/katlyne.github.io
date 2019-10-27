@@ -1,0 +1,42 @@
+html {
+    background-color: darkred;
+}
+
+header,nav,main,footer {
+    margin: 1.25rem auto;
+    max-width: 760px;
+}
+
+.flex {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+body {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 1em;
+    background-color: white;
+    border-radius: 3em;
+}
+
+figure {
+    display: block;
+    max-width: 800px;
+    margin: 1em;
+    padding: 1em;
+    flex: 1 1 auto;
+}
+
+img {
+    filter: blur(0em);
+    transition: filter 0.5s;
+}
+[data-src] {
+    min-width: 50px;
+    min-height: 50px;
+}
+img[data-src] {
+    width: 100%;
+}

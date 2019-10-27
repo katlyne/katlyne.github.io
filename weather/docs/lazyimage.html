@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Lazy images</title>
+    <meta name="author" content="Katlyne Chinain">
+    <meta name="description" content="Lazy images Assignment">
+    <link href="/weather/css/weather-image.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+    <header>
+        <h1>Lazy Images</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="flex">
+            <figure>
+                <picture>
+                    <source srcset="../weather/images/weather/clear large.jpg 600w" media="(min-width: 600px)">
+                    <img src="/weather/images/weather/clear small.jpg" alt="sunny picture">
+                </picture>
+            </figure>
+            <figure>
+                <picture>
+                        <source srcset="../weather/images/weather/snow large.jpg 600w" media="(min-width: 600px)">
+                    <img src="/weather/images/weather/snow small.jpg" alt="snowy picture">
+                </picture>
+            </figure>
+            <figure>
+                <picture>
+                        <source srcset="../weather/images/weather/rain large.jpg 600w" media="(min-width: 600px)">
+                    <img src="/weather/images/weather/rain small.jpg" alt="rainy picture">
+                </picture>
+            </figure>
+            <figure>
+                <picture>
+                        <source srcset="../weather/images/weather/fog large.jpg 600w" media="(min-width: 600px)">
+                    <img src="/weather/images/weather/fog small.jpg" alt="foggy picture">
+                </picture>
+            </figure>
+            <figure>
+                <picture>
+                        <source srcset="../weather/images/weather/clouds large.jpg 600w" media="(min-width: 600px)">
+                    <img src="/weather/images/weather/clouds small.jpg" alt="cloudy picture">
+                </picture>
+            </figure>
+
+
+        </div>
+    </main>
+</body>
+<footer>
+    &copy; 2019 | Katlyne Chinain | <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5">MDN
+        documentation site</a> | BYUI
+    Last uptated: <span id="currentuptated"></span>
+</footer>
+<script src="js/modification.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.28/webfont.js"></script>
+
+</html>
