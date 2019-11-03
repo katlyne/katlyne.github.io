@@ -64,3 +64,63 @@
 	  }
 	
 	}
+
+
+/* Summary box */
+.current {
+	border: black solid;
+	border-radius: 1em;
+	margin: 0.5rem;
+	position: relative;
+	max-width: 775px;
+	max-height: 700px;
+	border-radius: 1em;
+	padding: 4em;
+	display: block;
+	
+  }
+  #currenthotdegree {
+	font-family: 'Baloo', 'Helvetica', 'sans-serif';
+	font-size:30px;
+	color: #890000;
+	position: absolute;
+	top: 20px;
+	left: 50px;
+  }
+  #currentcolddegree {
+	font-family: 'Baloo', 'Helvetica', 'sans-serif';
+	font-size: 30px;
+	color:#0056BF;
+	position: absolute; 
+	left: 640px;
+	top:20px;
+	
+  }
+  #currentdegree {
+	font-family: 'Baloo', 'Helvetica', 'sans-serif';
+	font-size: 80px;
+	position: relative; 
+	top: -20px;
+	left: 250px;
+  }
+  #feelTemp {
+	display: block;
+	font-family: 'Baloo', 'Helvetica', 'sans-serif';
+	font-size: 0.6em;
+	position: absolute; 
+	top: 130px;
+	left: 320px;
+  }
+  #wind {
+	font-family: 'Baloo', 'Helvetica', 'sans-serif';
+	position: absolute;
+	top: 180px;
+	left: 40px;
+  }
+  #gusts{
+	display: block;
+	font-family: 'Baloo', 'Helvetica', 'sans-serif';
+	position: absolute;
+	top: 180px;
+	left: 600px;
+  }
