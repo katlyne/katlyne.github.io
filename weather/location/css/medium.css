@@ -103,23 +103,4 @@
 	left: 600px;
   }
 
-
-  .clear {
-    background-image: url("../images/lazy/clear-large.jpg")
-  }
-
-  .fog {
-    background-image: url("../images/lazy/fog-large.jpg");
-  }
-
-  .rain {
-    background-image: url("../images/lazy/rain-large.jpg");
-  }
-
-  .snow {
-    background-image: url("../images/lazy/snow-large.jpg");
-  }
-
-  .clouds {
-    background-image: url("../images/lazy/clouds-large.jpg");
-  }
+  
