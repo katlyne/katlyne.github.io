@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function(){
     timeBall(hour);
 
     //Implement the weather backround image
-    let currweather= "clouds"
+    let currweather= "rain"
     changeSummaryImage(currweather);
 
 });
