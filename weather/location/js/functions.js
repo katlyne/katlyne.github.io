@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function(){
     timeBall(hour);
 
     //Implement the weather backround image
-    let weather= "snow";
+    let weather= "rain";
     console.log(weather);
     changeSummaryImage(weather);
 
