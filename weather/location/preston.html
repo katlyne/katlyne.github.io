@@ -39,7 +39,6 @@
                 <li><a href="/weather/location/fishhaven.html" title="go to Fish Haven">Fish Haven</a></li>
                 <li><a href="/weather/location/stormcenter.html" title="go to Storm Center">Storm Center</a></li>
                 <li><a href="/weather/location/gallery.html" title="go to Gallery">Gallery</a></li>
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
             </ul>
         </nav>
         <main class="main-container">
@@ -48,101 +47,33 @@
                 <h3>GPS Coordinates</h3>
                 <p>42.0963° N, 111.8766° W</p>
             </section>
-            <section class="current">
-                
-                <div id="currenthotdegree">58&#176;</div>
-                <div id="currentdegree">51&#8457;</div>
-                <div id="currentcolddegree">34&#176;</div>
-                <div id="wind"><span class="wi wi-strong-wind"></span> 4.8mph</div>
-                <div id="feelTemp">Feels like <span id="wc"></span> &#176;</div>
-                <div id="gusts">Gusts: 8mph</div>
-
-            </section>
-            <div class="boites">
-                <section class="temperatures">
-                    <h3>Forecast Temperatures</h3>
-                    <section id="temperatures">
-                        <div class="circle">
-                        <div class="o1">20</div>
-                        <div class="o2">20</div>
-                        <div class="o3">20</div>
-                        <div class="o4">20</div>
-                        <div class="o5">10</div>
-                        <div class="o6">20</div>
-                        <div class="o7">20</div>
-                        <div class="o8">30</div>
-                        <div class="o9">20</div>
-                        <div class="o10">10</div>
-                        <div class="o11">99</div>
-                        <div class="o12">40</div>
-                        <div class="symbol">&#8457;</div>
-                        <div class="i1">1</div>
-                        <div class="i2">2</div>
-                        <div class="i3">3</div>
-                        <div class="i4">4</div>
-                        <div class="i5">5</div>
-                        <div class="i6">6</div>
-                        <div class="i7">7</div>
-                        <div class="i8">8</div>
-                        <div class="i9">9</div>
-                        <div class="i10">10</div>
-                        <div class="i11">11</div>
-                        <div class="i12">12</div>
-                        <div class="ball"></div>
-                      </div>
-                      </section>
-                    
+            <section id="currweather">
+                <section class="current">
+                    <div id="currenthotdegree">58&#176;</div>
+                    <div id="currentdegree">51&#8457;</div>
+                    <div id="currentcolddegree">34&#176;</div>
+                    <div id="wind"><span class="wi wi-strong-wind"></span> 4.8mph</div>
+                    <div id="feels">Feels like: <span id="windchill"></span></div>
+                    <div id="gusts">Gusts: 8mph</div>
                 </section>
-                <section class="precipitation">
-                    <h3>Precipitation</h3>
-                    <section id="precipitation">
-                        <div class="circle">
-                        <div class="o1">20</div>
-                        <div class="o2">20</div>
-                        <div class="o3">20</div>
-                        <div class="o4">20</div>
-                        <div class="o5">10</div>
-                        <div class="o6">20</div>
-                        <div class="o7">20</div>
-                        <div class="o8">30</div>
-                        <div class="o9">20</div>
-                        <div class="o10">10</div>
-                        <div class="o11">99</div>
-                        <div class="o12">40</div>
-                        <div class="symbol">&#9730;%</div>
-                        <div class="i1">1</div>
-                        <div class="i2">2</div>
-                        <div class="i3">3</div>
-                        <div class="i4">4</div>
-                        <div class="i5">5</div>
-                        <div class="i6">6</div>
-                        <div class="i7">7</div>
-                        <div class="i8">8</div>
-                        <div class="i9">9</div>
-                        <div class="i10">10</div>
-                        <div class="i11">11</div>
-                        <div class="i12">12</div>
-                        <div class="ball"></div>
-                      </div>
-                      </section>
-                </section>
-                <section class="conditions">
-                    <h3>Forecast Conditions</h3>
-                        <section id="conditions">
+                <div class="boites">
+                    <section class="temperatures">
+                        <h3>Forecast Temperatures</h3>
+                        <section id="temperatures">
                             <div class="circle">
-                            <div class="o1">&#9728;</div>
-                            <div class="o2">&#9729;</div>
-                            <div class="o3">&#9730;</div>
-                            <div class="o4">&#10052;</div>
-                            <div class="o5">&#9728;</div>
-                            <div class="o6">&#9729;</div>
-                            <div class="o7">&#9730;</div>
-                            <div class="o8">&#10052;</div>
-                            <div class="o9">&#9728;</div>
-                            <div class="o10">&#9729; </div>
-                            <div class="o11">&#9730;</div>
-                            <div class="o12">&#10052;</div>
-                            <div class="symbol"></div>
+                            <div class="o1">20</div>
+                            <div class="o2">20</div>
+                            <div class="o3">20</div>
+                            <div class="o4">20</div>
+                            <div class="o5">10</div>
+                            <div class="o6">20</div>
+                            <div class="o7">20</div>
+                            <div class="o8">30</div>
+                            <div class="o9">20</div>
+                            <div class="o10">10</div>
+                            <div class="o11">99</div>
+                            <div class="o12">40</div>
+                            <div class="symbol">&#8457;</div>
                             <div class="i1">1</div>
                             <div class="i2">2</div>
                             <div class="i3">3</div>
@@ -156,18 +87,88 @@
                             <div class="i11">11</div>
                             <div class="i12">12</div>
                             <div class="ball"></div>
-                          </div>
-                          </section>
-                </section>
-            </div>
+                        </div>
+                        </section>
+                        
+                    </section>
+                    <section class="precipitation">
+                        <h3>Precipitation</h3>
+                        <section id="precipitation">
+                            <div class="circle">
+                            <div class="o1">20</div>
+                            <div class="o2">20</div>
+                            <div class="o3">20</div>
+                            <div class="o4">20</div>
+                            <div class="o5">10</div>
+                            <div class="o6">20</div>
+                            <div class="o7">20</div>
+                            <div class="o8">30</div>
+                            <div class="o9">20</div>
+                            <div class="o10">10</div>
+                            <div class="o11">99</div>
+                            <div class="o12">40</div>
+                            <div class="symbol">&#9730;%</div>
+                            <div class="i1">1</div>
+                            <div class="i2">2</div>
+                            <div class="i3">3</div>
+                            <div class="i4">4</div>
+                            <div class="i5">5</div>
+                            <div class="i6">6</div>
+                            <div class="i7">7</div>
+                            <div class="i8">8</div>
+                            <div class="i9">9</div>
+                            <div class="i10">10</div>
+                            <div class="i11">11</div>
+                            <div class="i12">12</div>
+                            <div class="ball"></div>
+                        </div>
+                        </section>
+                    </section>
+                    <section class="conditions">
+                        <h3>Forecast Conditions</h3>
+                            <section id="conditions">
+                                <div class="circle">
+                                <div class="o1">&#9728;</div>
+                                <div class="o2">&#9729;</div>
+                                <div class="o3">&#9730;</div>
+                                <div class="o4">&#10052;</div>
+                                <div class="o5">&#9728;</div>
+                                <div class="o6">&#9729;</div>
+                                <div class="o7">&#9730;</div>
+                                <div class="o8">&#10052;</div>
+                                <div class="o9">&#9728;</div>
+                                <div class="o10">&#9729; </div>
+                                <div class="o11">&#9730;</div>
+                                <div class="o12">&#10052;</div>
+                                <div class="symbol"></div>
+                                <div class="i1">1</div>
+                                <div class="i2">2</div>
+                                <div class="i3">3</div>
+                                <div class="i4">4</div>
+                                <div class="i5">5</div>
+                                <div class="i6">6</div>
+                                <div class="i7">7</div>
+                                <div class="i8">8</div>
+                                <div class="i9">9</div>
+                                <div class="i10">10</div>
+                                <div class="i11">11</div>
+                                <div class="i12">12</div>
+                                <div class="ball"></div>
+                            </div>
+                            </section>
+                    </section>
+                </div>
+            </section>
         </main>
         <footer class="primaryNav">
             &copy; 2019 | Weathumbrella |
             <br>
             Today's Date: <span id="currentdate"></span>
-        </footer>
+            <br>
+            Last uptated: <span id="lastModified"></span>
+	    </footer>
+        <script src="/weather/location/js/currentdate.js"></script>
         <script src="/weather/location/js/functions.js"></script>
-    
     </div>
 </body>
 
