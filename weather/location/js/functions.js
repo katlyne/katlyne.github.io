@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function(){
     timeBall(hour);
 
     //Implement the weather backround image
-    let currweather= "clear"
+    let currweather= "clouds"
     changeSummaryImage(currweather);
 
 });
@@ -104,23 +104,24 @@ function buildWC(speed, temp) {
 *   Handle Weather Summary Background Image
 ************************************************ */
 function changeSummaryImage(currweather){
-    let w = document.getElementById('currweather');
+    let x = document.getElementById('currweather');
+    currweather = currweather.toLowerCase();
     console.log(currweather);
     switch(currweather) {
         case "clear":
-            w.className += 'clear';
+            x.className += 'clear';
         break;
         case "fog":
-             w.className += 'fog';
+             x.className += 'fog';
         break;
         case "rain":
-             w.className += 'rain';
+             x.className += 'rain';
         break;
         case "snow":
-             w.className += 'snow';
+             x.className += 'snow';
         break;
         case "clouds":
-             w.className += 'clouds';
+             x.className += 'clouds';
         break;
     }
 
