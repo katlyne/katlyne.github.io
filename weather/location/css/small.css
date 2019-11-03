@@ -733,21 +733,22 @@ left:70px;
   }
 
   .clear {
-    background-image: url("../images/lazy/clear-small.jpg");
+    background-image: url("/weather/location/images/lazy/clear-small.jpg");
   }
 
   .fog {
-    background-image: url("../images/lazy/fog-small.jpg");
+    background-image: url("/weather/location/images/lazy/fog-small.jpg");
   }
 
   .rain {
-    background-image: url("../images/lazy/rain-small.jpg");
+    background-image: url("/weather/location/images/lazy/rain-small.jpg");
   }
 
   .snow {
-    background-image: url("../images/lazy/snow-small.jpg");
+    background-image: url("/weather/location/images/lazy/snow-small.jpg");
   }
 
   .clouds {
-    background-image: url("../images/lazy/clouds-small.jpg");
+    background-image: url("/weather/location/images/lazy/clouds-small.jpg");
   }
+  

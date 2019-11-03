@@ -104,26 +104,26 @@
   }
 
   /*Images*/
-/*#currweather {
+#currweather {
 	background-size: cover;
 }
   .clear {
-    background-image: url("../images/lazy/clear-medium.jpg")
+    background-image: url("/weather/location/images/lazy/clear-medium.jpg");
   }
 
   .fog {
-    background-image: url("../images/lazy/fog-medium.jpg");
+    background-image: url("/weather/location/images/lazy/fog-medium.jpg");
   }
 
   .rain {
-    background-image: url("../images/lazy/rain-medium.jpg");
+    background-image: url("/weather/location/images/lazy/rain-medium.jpg");
   }
 
   .snow {
-    background-image: url("../images/lazy/snow-medium.jpg");
+    background-image: url("/weather/location/images/lazy/snow-medium.jpg");
   }
 
   .clouds {
-    background-image: url("../images/lazy/clouds-medium.jpg");
-  }*/
+    background-image: url("/weather/location/images/lazy/clouds-medium.jpg");
+  }
 }

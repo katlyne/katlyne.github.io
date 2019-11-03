@@ -24,13 +24,11 @@ document.addEventListener("DOMContentLoaded", function(){
     timeBall(hour);
 
     //Implement the weather backround image
-    let weather= "rain";
+    let weather= "snow";
     console.log(weather);
     changeSummaryImage(weather);
 
 });
-
-
 
 
 //date
