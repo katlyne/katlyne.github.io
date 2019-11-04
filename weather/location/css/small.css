@@ -7,9 +7,12 @@ html {
   background-color: #28A7D6;
 }
 
-header,nav,main,footer {
+header,nav,footer {
   margin: 1.25rem auto;
   max-width: 760px;
+}
+main {
+  margin:1.25rem auto;
 }
 
 h1 {

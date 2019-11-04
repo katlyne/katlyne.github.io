@@ -18,10 +18,12 @@ document.addEventListener("DOMContentLoaded", function(){
         let speed = 25;
         let temp = 10;
         buildWC(speed, temp);
+        console.log(windchill);
 
     //Implement the time Ball()
-    let hour='4';
+    let hour='10';
     timeBall(hour);
+    console.log(timeBall);
 
     //Implement the weather backround image
     let weather= "clouds";
@@ -40,7 +42,7 @@ function lastModified() {
     const monthName = monthArray[lastMod.getMonth()];
     const formattedDate = dayName+", "+lastMod.getDate() + " "+monthName+', '+lastMod.getFullYear();
     document.querySelector("#lastModified").innerText = formattedDate;
-    
+    console.log(lastModified);
 };
 // menu button
 function toggleMenu() {
