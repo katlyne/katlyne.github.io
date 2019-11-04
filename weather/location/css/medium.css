@@ -1,20 +1,10 @@
 @media only screen and (min-width: 32.5em) {
-	main {
+	#currweather {
 		grid-template-columns: 1fr 1fr;
 	}
 
-	main section:nth-child(3) {
+	#currweather section:nth-child(3) {
 		display: block;
-	}
-
-	main picture {
-		display: block;
-	}
-
-	main section picture img {
-		width: 100%;
-		height: auto;
-
 	}
 
 	.navigation {
