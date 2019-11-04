@@ -108,19 +108,24 @@ function changeSummaryImage(weather){
     console.log(weather);
     switch(weather) {
         case "clear":
+            w.className ="";
             w.className += 'clear';
         break;
         case "fog":
-             w.className += 'fog';
+            w.className ="";
+            w.className += 'fog';
         break;
         case "rain":
-             w.className += 'rain';
+            w.className ="";
+            w.className += 'rain';
         break;
         case "snow":
-             w.className += 'snow';
+            w.className ="";
+            w.className += 'snow';
         break;
         case "clouds":
-             w.className += 'clouds';
+            w.className ="";
+            w.className += 'clouds';
         break;
     }
 
