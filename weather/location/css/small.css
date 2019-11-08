@@ -754,4 +754,9 @@ left:70px;
   .clouds {
     background-image: url("/weather/location/images/lazy/clouds-small.jpg");
   }
+
+  /*Fetch activity*/
+  .hide {
+    display: none;
+  }
   

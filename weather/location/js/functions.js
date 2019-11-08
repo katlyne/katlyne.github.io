@@ -1,7 +1,21 @@
 'use strict';
 
-// $ = document.querySelector();
-// $$ = document.querySelectorAll();
+//New Functions
+var pagenav = document.querySelector('#nav');
+var statusContainer = document.querySelector('#status');
+var contentContainer = document.querySelector('#main-container');
+
+// We also could have write it like this:
+
+// var pagenav = document.getElementById('nav');
+// var statusContainer = document.getElementById('status');
+// var contentContainer = document.getElementById('main-container');
+
+
+
+
+//var $ = document.querySelector();
+//var $$ = document.querySelectorAll();
 
 
 // A collection of functions for the weather page
@@ -29,6 +43,10 @@ document.addEventListener("DOMContentLoaded", function(){
     let weather= "clouds";
     console.log(weather);
     changeSummaryImage(weather);
+
+    //Get weather json data
+    let weatherURL = "/weather/location/js/idahoweather.json";
+    fetchWeatherData(weatherURL);
 
 });
 
@@ -133,4 +151,52 @@ function changeSummaryImage(weather){
 
 }
 
+/* ****************************************
+*   Fetch data
+***************************************** */
+function fetchWeatherData(weatherURL) {
+    let cityName = 'Preston'; // The data we want from the weather .json file
+    fetch(weatherURL)
+    .then(function(response) {
+        if(response.ok) {
+            return response .json();
+        }
+        throw new ERROR('Network response was not OK.');
+    })
+    .then(function(data){
+        //Check the data objet that was retrieved
+        console.log(data);
+        // data is the full JavaScript object, but we only want the preston part
+        //shorten the variable and focus only on the data we want to reduce typing
+        let p = data[cityName];
+
+        // ***********  Get the location information    **************
+        let cityName = p.City
+        let currState = p.State;
+        // Put them togather
+        let fullName = cityName+', '+currState;
+        // See if it worked, using ticks around the content in the log
+        console.log('fullName is: ${fullName}');
+        // Get the longitude and latitude and combine them to a comma separated single string
+        const latLong = p.properties.relativeLocation.geometry.coordinate[1] + ","+p.properties.relativeLocation.geometry.coordinates[0];
+        console.log(latLong);
+        // Create a JSON object containing the full name, latitude and longitude and store it into local storage.
+
+        // ********** Get the current conditions information    ***********
+        // As the data is extracted from the JSON, store it into session storage
+        const prestonDatoa = JSON.stringify({fullName, latLong});
+        locStore.setItem("Preston, ID", prestonData);
+        // Get the temperature data
+
+
+        // Get the wind data
+
+
+        // Get the hourly data using another function - should include the forecast temp, condition icons and wind speeds. The data will be stored into seesion storage.
+    })
+    .catch(function(error){
+        console.log('There was a fetch problem: ', error.message);
+        statusContainer.innerHTML = 'Sorry, the data could not be processed.';
+    })
+}
 
