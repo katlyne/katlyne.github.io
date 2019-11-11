@@ -4,6 +4,8 @@
 var pagenav = document.querySelector('#nav');
 var statusContainer = document.querySelector('#status');
 var contentContainer = document.querySelector('#main-container');
+var locStore = window.localStorage;
+var sessStore = window.sessionStorage;
 
 // We also could have write it like this:
 
@@ -68,7 +70,7 @@ function fetchWeatherData(weatherURL) {
         // data is the full JavaScript object, but we only want the preston part shorten the variable and focus only on the data we want to reduce typing
         let p = data[cityName];
 
-        // ***********  Get the location information    **************
+        // ***********    Get the location information    **************
         let locName = p.properties.relativeLocation.properties.city;
         console.log(locName);
         let locState = p.properties.relativeLocation.properties.state;
@@ -77,35 +79,33 @@ function fetchWeatherData(weatherURL) {
         // See if it worked, using ticks around the content in the log
         console.log(`fullName is: ${fullName}`);
         // Get the longitude and latitude and combine them to a comma separated single string
-        const latLong = p.properties.relativeLocation.geometry.coordinate[1] + ","+p.properties.relativeLocation.geometry.coordinates[0];
+        const latLong = p.properties.relativeLocation.geometry.coordinates[1] + ","+p.properties.relativeLocation.geometry.coordinates[0];
         console.log(latLong);
         // Create a JSON object containing the full name, latitude and longitude and store it into local storage.
-        sessStore.setItem("fullName", fullName);
-        sessStore.setItem("latLong", latLong);
-        // ********** Get the current conditions information  ***********
-        // As the data is extracted from the JSON, store it into session storage
         const prestonData = JSON.stringify({fullName, latLong});
         locStore.setItem("Preston, ID", prestonData);
+        // ********** Get the current conditions information  ***********
+        // As the data is extracted from the JSON, store it into session storage
+        sessStore.setItem("fullName", fullName);
+        sessStore.setItem("latLong", latLong);
         // Get the temperature data
         const prestontemp = p.properties.relativeLocation.properties.temperature;
         console.log(prestontemp);
         const phightemp = p.properties.relativeLocation.properties.highTemp;
         console.log(phightemp);
-        sessStore.setItem("phightemp");
+        sessStore.setItem("phightemp", phightemp);
         const plowtemp = p.properties.relativeLocation.properties.lowTemp;
         console.log(plowtemp);
-        sessStore.setItem("plowtemp");
+        sessStore.setItem("plowtemp", plowtemp);
         //const prestontemp = JSON.stringify({temperature});
         sessStore.setItem("prestontemp", prestontemp)
         // Get the wind data
         const pwindspeed = p.properties.relativeLocation.properties.windSpeed;
         console.log(pwindspeed);
-        sessStore.setItem("pwindspeed");
-        const pwindgust = p.properties.relativeLocation.properties.pwindgust;
+        sessStore.setItem("pwindspeed", pwindspeed);
+        const pwindgust = p.properties.relativeLocation.properties.windGust;
         console.log(pwindgust);
-        sessStore.setItem("pwindgust");
-
-        
+        sessStore.setItem("pwindgust", pwindgust);
 
         // Get the hourly data using another function - should include the forecast temp, condition icons and wind speeds. The data will be stored into seesion storage.
         getHourly(p.properties.forecastHourly);
@@ -115,20 +115,6 @@ function fetchWeatherData(weatherURL) {
         statusContainer.innerHTML = 'Sorry, the data could not be processed.';
     })
 }
-
-/* ****************************************
-*   Web Storage API
-**************************************   */    
-
-//Setup localStorage
-//var locStore = window.localStorage;
-
-// Setup sessionStorage
-//var sessStore = window.sessionStorage;
-
-// Store favorite class into localStorage
-//locStore.setItem('favoriteClass', 'CIT230');
-
 
 /* *************************************
 *  Get Hourly Forecast data
