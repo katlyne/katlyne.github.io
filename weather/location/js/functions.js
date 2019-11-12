@@ -117,6 +117,41 @@ function fetchWeatherData(weatherURL) {
 }
 
 /* *************************************
+*  Build The Weather Page
+************************************* */
+function buildPage() {
+    // Set the title with the location name at the first
+    // Gets the title element so it can be worked with
+    let pageTitle = document.querySelector('#title');
+    // Create a text node containing the full name 
+    let fullNameNode = document.createTextNode(sessStore.getItem('fullName'));
+    // inserts the fullName value before any other content that might exist
+    pageTitle.insertBefore(fullNameNode, pageTitle.childNodes[0]);
+    // When this is done the title should look something like this:
+    // Preston, Idaho | The Weather Site  
+    // Get the h1 to display the city location
+    let contentHeading = document.querySelector('#siteName');
+    contentHeading.innerHTML = sessStore.getItem('fullName');
+    // The h1 in the main element should now say "Preston, Idaho"                  
+    // Get the coordinates container for the location
+    let latlon = document.querySelector('#latLon');
+    latLon.innerHTML = sessStore.getItem('latLong');
+    // The latitude and longitude should match what was stored in session storage.
+    // Get the condition keyword and set Background picture
+    changeSummaryImage(sessStore.getItem('shortForecast'));
+    /* Keep in mind that the value may be different than 
+    what you need for your CSS to replace the image. You 
+    may need to make some adaptations for it to work.*/
+    }
+       
+
+
+
+
+
+
+
+/* *************************************
 *  Get Hourly Forecast data
 ************************************* */
 function getHourly(URL) {
