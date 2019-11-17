@@ -99,7 +99,7 @@ function toggleMenu() {
  *   Calculates the Wind Chill Temperature
  ****************************************** */
 function buildWC(speed, temp) {
-    let feelTemp = document.getElementById("windchill");
+  //let feelTemp = document.getElementById("windchill");
 
     //Compute the windchill
     let wc = 35.74 + 0.6215 * temp - 35.75 * Math.pow(speed, 0.16) + 0.4275 * temp * Math.pow(speed, 0.16);
@@ -110,10 +110,12 @@ function buildWC(speed, temp) {
 
     //If chills is greater than temp, return temp
     wc = (wc < temp) ? temp : wc;
+
+    // Display the windchill
     console.log(`The wind chill is: ${wc}`);
-    feelTemp.innerHTML = wc;
+
     //wc = 'Feels like '+wc+' °F';
-    windchill.innerHTML = wc + ' °F';
+    return wc;
 }
 
 // Time Ball Indicator
@@ -320,12 +322,13 @@ function buildPage() {
     // Set the wind information
     let speed = $('#speed');
     let gust = $('#gusts');
-    speed.innerHTML = sessStore.getItem('pwindspeed');
+    speed.innerHTML = "Wind Speed: " + sessStore.getItem('pwindspeed');
     console.log(speed);
-    gust.innerHTML = sessStore.getItem('pwindgust');
+    gust.innerHTML = "Gust: " + sessStore.getItem('pwindgust');
     console.log(gust);
     // Calculate feel like temp
-    feelTemp.innerHTML = buildWC(sessStore.getItem('pwindspeed'), sessStore.getItem('prestontemp')) + "°F";
+    console.log(buildWC(39,5.1));
+    feelTemp.innerHTML = "Feel like: " + buildWC(sessStore.getItem('pwindspeed'), sessStore.getItem('prestontemp')) + "°F";
 };
 
 // **********  Set the Time Indicators  **********

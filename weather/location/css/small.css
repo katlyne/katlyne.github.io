@@ -194,7 +194,7 @@ nav {
   font-size: 30px;
   color:#0056BF;
   position: absolute; 
-  left: 180px;
+  left: 190px;
   top:60px;
   
 }
@@ -213,7 +213,7 @@ nav {
   top: 120px;
   left: 320px;
 }
-#currwind {
+#speed {
   font-family: 'Baloo', 'Helvetica', 'sans-serif';
   position: absolute;
   top: 100px;
