@@ -43,19 +43,16 @@
         </nav>
         <section id="status">Please be patient while I get your weather information.</section>
 
-
-
-
         <main id="main-container" class="hide">
                 <h2>Preston</h2>
                 <h3>GPS Coordinates</h3>
-                <p>42.0963° N, 111.8766° W</p>
+                <p id="latLong">42.0963° N, 111.8766° W</p>
             <section id="currweather">
                 <section class="current">
                     <div id="currenthotdegree">58&#176;</div>
                     <div id="currentdegree">10&#8457;</div>
                     <div id="currentcolddegree">34&#176;</div>
-                    <div id="wind"><span class="wi wi-strong-wind"></span> 25mph</div>
+                    <div id="currwind"><span class="wi wi-strong-wind"></span> 25mph</div>
                     <div id="feels">Feels like: <span id="windchill"></span></div>
                     <div id="gusts">Gusts: 8mph</div>
                 </section>
@@ -95,8 +92,8 @@
                         
                     </section>
                     <section class="precipitation">
-                        <h3>Precipitation</h3>
-                        <section id="precipitation">
+                        <h3>Wind</h3>
+                        <section id="wind">
                             <div class="circle">
                             <div class="o1">20</div>
                             <div class="o2">20</div>
@@ -170,7 +167,6 @@
             <br>
             Last uptated: <span id="lastModified"></span>
 	    </footer>
-        <script src="/weather/location/js/currentdate.js"></script>
         <script src="/weather/location/js/functions.js"></script>
     </div>
 </body>
