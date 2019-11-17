@@ -319,9 +319,11 @@ function buildPage() {
     console.log(currentTemp);
     // Set the wind information
     let speed = $('#speed');
-    let gust = $('#pwindgust');
+    let gust = $('#gusts');
     speed.innerHTML = sessStore.getItem('pwindspeed');
+    console.log(speed);
     gust.innerHTML = sessStore.getItem('pwindgust');
+    console.log(gust);
     // Calculate feel like temp
     feelTemp.innerHTML = buildWC(sessStore.getItem('pwindspeed'), sessStore.getItem('prestontemp')) + "°F";
 };
