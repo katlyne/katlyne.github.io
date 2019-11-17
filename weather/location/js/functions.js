@@ -13,9 +13,6 @@ var sessStore = window.sessionStorage;
 // var statusContainer = document.getElementById('status');
 // var contentContainer = document.getElementById('main-container');
 
-
-
-
 var $ = document.querySelector.bind(document);
 var $$ = document.querySelectorAll.bind(document);
 
