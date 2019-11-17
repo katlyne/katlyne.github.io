@@ -1,34 +1,41 @@
 'use strict';
-var pageNav = document.querySelector('#nav');
+
+//New Functions
+var pagenav = document.querySelector('#nav');
 var statusContainer = document.querySelector('#status');
 var contentContainer = document.querySelector('#main-container');
 var locStore = window.localStorage;
 var sessStore = window.sessionStorage;
-var body = document.querySelector('#body');
-let feelTemp = document.getElementById('feelTemp');
 let title = document.getElementById('page-title')
-/* *************************************
-*  Weather Site JavaScript Functions
-************************************* */
 
- const $ = document.querySelector.bind(document);
- const $$ = document.querySelectorAll.bind(document);
+// We also could have write it like this:
 
-// Listen for the DOM to finish building
-/*document.addEventListener("DOMContentLoaded", function(){
-    /*buildModDate();
-    const menuButton = document.querySelector("#menuBtn");
-  menuButton.addEventListener('click',toggleMenu);*/
-//variables for wind chill
-/*let temp = 31;
-let speed = 5;
-buildWC(speed,temp);*/
+// var pagenav = document.getElementById('nav');
+// var statusContainer = document.getElementById('status');
+// var contentContainer = document.getElementById('main-container');
+
+var $ = document.querySelector.bind(document);
+var $$ = document.querySelectorAll.bind(document);
 
 
-console.log('My javascript is being read.');
+// A collection of functions for the weather page
+document.addEventListener("DOMContentLoaded", function () {
+
+    //Call the modified date function
+    lastModified();
+
+    //Work with small screen menu
+    //const menuButton = document.querySelector("#menuBtn");
+    // menuButton.addEventListener('click', menuButton);
+
+    //Get weather json data
+    let weatherURL = "/weather/location/js/idahoweather.json";
+    fetchWeatherData(weatherURL);
+
+});
 
 
-//Function for showing the date//
+//Move to originial file
 
 (function() {
     
@@ -55,211 +62,175 @@ var month = now.getMonthName();
 var date = now.getDate();
 var year = now.getFullYear();
 
-document.getElementById("todaysdate").innerHTML=day + ", " + date + " " + month + " " +
+document.getElementById("currentdate").innerHTML=day + ", " + date + " " + month + " " +
     year;
 
 
 console.log(day + month + date + year);
 
-//Last Modified//
-document.addEventListener("DOMContentLoaded", function(){
-    let lastMod = document.lastModified;
-    document.getElementById("modDate").innerHTML = lastMod;
-    // The Time Indictor function
-/*let hour="7";
-timeBall(hour);
-*/
+//date
+function lastModified() {
+    const dayArray = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const monthArray = ["January", "February", "March", "Arpil", "May", "June", "July", "August", "September", "October", "November", "December"];
+    let lastMod = new Date(document.lastModified);
+    const dayName = dayArray[lastMod.getDay()];
+    const monthName = monthArray[lastMod.getMonth()];
+    const formattedDate = dayName + ", " + lastMod.getDate() + " " + monthName + ', ' + lastMod.getFullYear();
+    document.querySelector("#lastModified").innerText = formattedDate;
+    console.log(lastModified);
+};
+// menu button
+function toggleMenu() {
+    document.getElementsByClassName("navigation")[0].classList.toggle("responsive");
+}
 
-//Changing the background
-/*let currCond= "clear";
-changeSummaryBackground(currCond);*/
 
-//Get weather json data
-let weatherURL = "/weather/js/idahoweather.json";
-fetchWeatherData(weatherURL);
+// Handles Small Screen Menu
+//const menuButton = document.querySelector("#menuBtn");
+//menuButton.addEventListener('click',function(event){
+//const navList = document.querySelector('#navList');
+//navList.classList.toggle("mobileNav");
+//})
+//function mobileMenu(event){
+//    const navList = $('navList');
+//navList.classList.toggle("mobileNav");
+//}
 
-});
-    /*WebFont.load({
-        google: {
-          families: [
-             'Montserrat'
-          ]
-        }
-      });*/
-
-       // Calculate the Windchill
+/* *****************************************
+ *   Calculates the Wind Chill Temperature
+ ****************************************** */
 function buildWC(speed, temp) {
-    
-   
-    // Compute the windchill
-    let wc = 35.74 + 0.6215 * temp - 35.75 * Math.pow(speed, 0.16) + 0.4275 * temp * Math.pow(speed, 0.16);
-    console.log(wc);
-   
-    // Round the answer down to integer
-    wc = Math.floor(wc);
-   
-    // If chill is greater than temp, return the temp
-    wc = (wc > temp)?temp:wc;
-   
-    // Display the windchill
-    console.log(wc);
-    // wc = 'Feels like '+wc+'°F';
-    return wc;
-    }
+    let feelTemp = document.getElementById("windchill");
 
-    // Time Indicator Function
-    function timeIndicator(hour){
+    //Compute the windchill
+    let wc = 35.74 + 0.6215 * temp - 35.75 * Math.pow(speed, 0.16) + 0.4275 * temp * Math.pow(speed, 0.16);
+    console.log(`The wind chill is: ${wc}`); // log wc to console
+
+    //Round the answer down to integer
+    wc = Math.floor(wc);
+
+    //If chills is greater than temp, return temp
+    wc = (wc < temp) ? temp : wc;
+    console.log(`The wind chill is: ${wc}`);
+    feelTemp.innerHTML = wc;
+    //wc = 'Feels like '+wc+' °F';
+    windchill.innerHTML = wc + ' °F';
+}
+
+// Time Ball Indicator
+function timeIndicator(hour) {
     // Find all "ball" classes and remove them
     let x = document.querySelectorAll(".ball");
     for (let item of x) {
         console.log(item);
         item.classList.remove("ball");
     }
-    
     // Find all hours that match the parameter and add the "ball" class
-    let hr = document.querySelectorAll(".i"+hour);
-    for (let item of hr){
+    let hr = document.querySelectorAll(".i" + hour);
+    for (let item of hr) {
         item.classList.add("ball");
     }
 }
+/* *********************************************
+ *   Handle Weather Summary Background Image
+ ************************************************ */
+function changeSummaryImage(weather) {
+    let w = document.getElementById('currweather');
+    weather = weather.toLowerCase();
+    console.log(weather);
+    switch (weather) {
+        case "clear":
+            w.className = "";
+            w.className += 'clear';
+            break;
+        case "fog":
+            w.className = "";
+            w.className += 'fog';
+            break;
+        case "rain":
+            w.className = "";
+            w.className += 'rain';
+            break;
+        case "snow":
+            w.className = "";
+            w.className += 'snow';
+            break;
+        case "clouds":
+            w.className = "";
+            w.className += 'clouds';
+            break;
+    }
 
-//Changing the background function
-function changeSummaryImage(currCond) {
-    console.log(`Value of currCond: ${currCond}`);
-  let condition = (currCond.toLowerCase()).trim(); // standardize input
-  console.log(`Value of condition: ${condition}`);
-  let conditionIndex = 0; // set condition index to 0
-  console.log(`Value of conditionIndex: ${conditionIndex}`);
-  // determine available width
-  let width = window.innerWidth;
-  console.log(`Screen Width: ${width}`);
-   // check if screen is tablet or desktop widths and adjust starting point for condition index
-   if (width > 475 && width <= 800) {
-    conditionIndex += 5;
-    console.log(`Updated value of conditionIndex: ${conditionIndex}`);
-  /*else if (width > 800) {
-    conditionIndex += 10*/
-  }
-
-  // store paths to specific width images
-  const imgURLS = ["/clear400.jpg", "/clouds400.jpg", "/fog400.jpg", "/rain400.jpg", "/snow400.jpg",
-                  "/clear600.jpg", "/clouds600.jpg", "/fog600.jpg", "/rain600.jpg", "/snow600.jpg", 
-                   ];
-  // rest of directory structure
-  const imgDirPrefix = "url(/weather/images";
-  const imgDirPostfix = ")"
-
-  // update condition index based on weather status
-  let weather = "";
-  if (condition.includes("sun")|| condition.includes("clear")){weather = "clear";}
-  else if (condition.includes("cloud")) {weather="cloudy";console.log(weather);}
-  else if (condition.includes("fog")) {weather="fog";}
-  else if (condition.includes("rain")) {weather="rain";}
-  else if (condition.includes("snow")) {weather="snow";}
-  console.log(weather);
-  switch (weather) {
-    case "clear":
-      body.classList.add("clear");
-      break;
-    case "cloudy":
-        body.classList.add("cloud");
-      break;
-    case "fog":
-        body.classList.add("fog");
-      break;
-    case "rain":
-        body.classList.add("rain");
-      break;
-    case "snow":
-        body.classList.add("snow");
-      break;
-    default:
-      console.log("Error: Weather type is invalid.")
-      break;
-  }
-  console.log(`Value of conditionIndex: ${conditionIndex}`);
-  
-  // build image url() CSS variable
-  /*let imageURL = imgDirPrefix + imgURLS[conditionIndex] + imgDirPostfix;
-  console.log(`imageURL is: ${imageURL}`);*/
-
-  // set background image
-  //const backgroundImg = document.body.style; // used to access css
-  // console.log(`backgroundImg: ${backgroundImg}`);
- // backgroundImg.setProperty("--dynamic-weather-background", `${imageURL}`); 
-  //console.log(`${imageURL} has been set as the background.`);
 }
 
 
-/* *************************************
-*  Fetch Weather Data
-************************************* */
-function fetchWeatherData(weatherURL){
-  let cityName = title.dataset.city // "soda-springs"'Preston'; // The data we want from the weather.json file
-  console.log(cityName);
+/* ****************************************
+ *   Fetch data
+ ***************************************** */
+function fetchWeatherData(weatherURL) {
+  let cityName = 'Preston'; // The data we want from the weather .json file
   fetch(weatherURL)
-  .then(function(response) {
-  if(response.ok){
-  return response.json();
-  }
-  throw new ERROR('Network response was not OK.');
-  })
-  .then(function(data){
-    // Check the data object that was retrieved
-    console.log(data);
-    // data is the full JavaScript object, but we only want the preston part
-    // shorten the variable and focus only on the data we want to reduce typing
-    let p = data[cityName];
+      .then(function (response) {
+          if (response.ok) {
+              return response.json();
+          }
+          throw new ERROR('Network response was not OK.');
+      })
+      .then(function (data) {
+          //Check the data objet that was retrieved
+          console.log(data);
+          // data is the full JavaScript object, but we only want the preston part shorten the variable and focus only on the data we want to reduce typing
+          let p = data[cityName];
 
+          // ***********    Get the location information    **************
+          let locName = p.properties.relativeLocation.properties.city;
+          console.log(locName);
+          let locState = p.properties.relativeLocation.properties.state;
+          // Put them togather
+          let fullName = locName + ', ' + locState;
+          // See if it worked, using ticks around the content in the log
+          console.log(`fullName is: ${fullName}`);
+          // Get the longitude and latitude and combine them to a comma separated single string
+          let latLong = p.properties.relativeLocation.geometry.coordinates[1] + "," + p.properties.relativeLocation.geometry.coordinates[0];
+          console.log(latLong);
+          // Create a JSON object containing the full name, latitude and longitude and store it into local storage.
+          const prestonData = JSON.stringify({
+              fullName,
+              latLong 
+          });
+          locStore.setItem("Preston, ID", prestonData);
+          // ********** Get the current conditions information  ***********
+          // As the data is extracted from the JSON, store it into session storage
+          sessStore.setItem("fullName", fullName);
+          sessStore.setItem("latLong", latLong);
+          console.log(latLong);
+          // Get the temperature data
+          const prestontemp = p.properties.relativeLocation.properties.temperature;
+          console.log(prestontemp);
+          const phightemp = p.properties.relativeLocation.properties.highTemp;
+          console.log(phightemp);
+          sessStore.setItem("phightemp", phightemp);
+          const plowtemp = p.properties.relativeLocation.properties.lowTemp;
+          console.log(plowtemp);
+          sessStore.setItem("plowtemp", plowtemp);
+          //const prestontemp = JSON.stringify({temperature});
+          sessStore.setItem("prestontemp", prestontemp);
+          // Get the wind data
+          const pwindspeed = p.properties.relativeLocation.properties.windSpeed;
+          console.log(pwindspeed);
+          sessStore.setItem("pwindspeed", pwindspeed);
+          const pwindgust = p.properties.relativeLocation.properties.windGust;
+          console.log(pwindgust);
+          sessStore.setItem("pwindgust", pwindgust);
 
-    // **********  Get the location information  **********
-    let locName = p.properties.relativeLocation.properties.city;
-    let locState = p.properties.relativeLocation.properties.state;
-    let highTemp = p.properties.relativeLocation.properties.highTemp;
-    let lowTemp = p.properties.relativeLocation.properties.lowTemp;
-    let windGust = p.properties.relativeLocation.properties.windGust;
-    let windSpeed = p.properties.relativeLocation.properties.windSpeed;
-    let temperature = p.properties.relativeLocation.properties.temperature;
-
-
-
-    // Put them together
-    let fullName = locName+', '+locState;
-    // See if it worked, using ticks around the content in the log
-    console.log(`fullName is: ${fullName}`);
-    // Get the longitude and latitude and combine them to
-    const latLong = p.properties.relativeLocation.geometry.coordinates[1] + ","+ p.properties.relativeLocation.geometry.coordinates[0];
-    console.log(latLong);
-    // a comma separated single string
-    const prestonData = JSON.stringify({fullName,latLong});
-    locStore.setItem("Preston,ID", prestonData);
-    // Create a JSON object containing the full name, latitude and longitude
-    // and store it into local storage.
-
-
-    // **********  Get the current conditions information  **********
-    // As the data is extracted from the JSON, store it into session storage
-    sessStore.setItem("fullName",fullName);
-    sessStore.setItem("latLong",latLong);
-    // Get the temperature data
-    sessStore.setItem("temperature",temperature);
-    sessStore.setItem("highTemp",highTemp);
-    sessStore.setItem("lowTemp",lowTemp);
-    // Get the wind data 
-    sessStore.setItem("windGust",windGust);
-    sessStore.setItem("windSpeed",windSpeed);
-
-    // Get the hourly data using another function - should include the forecast temp, condition icons and wind speeds. The data will be stored into session storage.
-    getHourly(p.properties.forecastHourly);
-
-  })
-  .catch(function(error){
-  console.log('There was a fetch problem: ', error.message);
-  statusContainer.innerHTML = 'Sorry, the data could not be processed.';
-  })
+          // Get the hourly data using another function - should include the forecast temp, condition icons and wind speeds. The data will be stored into seesion storage.
+          getHourly(p.properties.forecastHourly);
+      })
+      .catch(function (error) {
+          console.log('There was a fetch problem: ', error.message);
+          statusContainer.innerHTML = 'Sorry, the data could not be processed.';
+      })
 }
-var weatherURL="../js/idahoweather.json";
-fetchWeatherData(weatherURL);
 
 /* *************************************
 *  Get Hourly Forecast data
@@ -309,7 +280,7 @@ function getHourly(URL) {
 function buildPage() {
 // Set the title with the location name at the first
  // Gets the title element so it can be worked with
- let pageTitle = document.querySelector('#page-title');
+ let pageTitle = document.querySelector('#title');
  // Create a text node containing the full name 
  let fullNameNode = document.createTextNode(sessStore.getItem('fullName'));
  // inserts the fullName value before any other content that might exist
@@ -331,16 +302,16 @@ what you need for your CSS to replace the image. You
 may need to make some adaptations for it to work.*/
 // **********  Set the current conditions information  **********
 // Set the temperature information
-let highTemp = $('#hiTemp');
-let loTemp = $('#loTemp');
-let currentTemp = $('#currentTemp');
+let highTemp = $('#currenthotdegree');
+let loTemp = $('#currentcolddegree');
+let currentTemp = $('#currentdegree');
 let feelTemp = $('#feelTemp');
 highTemp.innerHTML = sessStore.getItem('highTemp') + "°F";
 loTemp.innerHTML = sessStore.getItem('lowTemp') + "°F";
 currentTemp.innerHTML = sessStore.getItem('temperature') + "°F";
 // Set the wind information
-let speed = $('#speed');
-let gust = $('#gusting');
+let speed = $('#currwind');
+let gust = $('#gusts');
 speed.innerHTML = sessStore.getItem('windSpeed');
 gust.innerHTML = sessStore.getItem('windGust');
 // Calculate feel like temp
@@ -416,6 +387,7 @@ for (let i = 0, x = 12; i < x; i++) {
  $('#winds .o' + windHour).innerHTML = windArray[i][0];
  windHour++;
 }
+
 // **********  Condition Component Icons  **********
 let conditionHour = currentHour;
 // Adjust counter based on current time
