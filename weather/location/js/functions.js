@@ -132,6 +132,7 @@ function timeIndicator(hour) {
         item.classList.add("ball");
     }
 }
+
 /* *********************************************
  *   Handle Weather Summary Background Image
  ************************************************ */
@@ -164,7 +165,101 @@ function changeSummaryImage(weather) {
 
 }
 
+// Function to change background image
+function changeSummaryBackground(keyword) {
+    let x = document.getElementById('currweather');
+    console.log(`Outside is: ${keyword}`);
 
+// Case Statements to change background image into current condition
+console.log(keyword);
+switch (keyword) {
+    case "clear":
+        x.className += 'clear';
+        break;
+    case "rain":
+        x.className += 'rain';
+        break;
+    case "fog":
+        x.className += 'fog';
+        break;
+    case "snow":
+        x.className += 'snow';
+        break;
+    case "cloudy":
+        x.className += 'cloudy';
+        break;
+    default:
+        console.log("Weather Type Not Found");
+        break;
+}
+console.log(`The used name is: ${x.className}`);
+}
+
+//Change shortForecast to keyword
+function getKeyword(shortForecast) {
+    let forecast = shortForecast.toLowerCase();
+    var keyword;
+    if (forecast.includes("sunny") || forecast.includes("clear")){
+        keyword = "clear";
+    }
+    else if (forecast.includes("cloud") || forecast.includes("overcast")){
+        keyword = "cloudy";
+    }
+    else if (forecast.includes("snow") || forecast.includes("snow showers") || forecast.includes("sleet")){
+        keyword = "snow";
+    }
+    else if (forecast.includes("rain") || forecast.includes("thunder") || forecast.includes("showers")){
+        keyword = "rain";
+    }
+    else if (forecast.includes("fog")){
+        keyword = "fog";
+    }
+    else {
+        console.log("Forecast Error");
+    }
+    return keyword;
+
+
+
+
+// Pull correct image
+let width = window.innerWidth;
+console.log(`Width of screen: ${width}`);
+if ((width >= (720)) && (keyword == 'clear')) {
+    var imgLoad = "url(/images/clear-large.jpg)";
+}
+else if ((width >= (720)) && (keyword == 'rain')) {
+    var imgLoad = "url(/images/rain-large.jpg)";
+}
+else if (width >= (720) && keyword == 'fog') {
+    var imgLoad = "url(/images/fog-large.jpg)";
+}
+else if (width >= (720) && keyword == 'snow') {
+    var imgLoad = "url(/images/snow-large.jpg)";
+}
+else if (width >= (720) && keyword == 'cloudy') {
+    var imgLoad = "url(/images/clouds-large.jpg)";
+}
+else if (width < (720) && keyword == 'clear') {
+    var imgLoad = "url(/images/clear-small.jpg)";
+}
+else if (width < (720) && keyword == 'fog') {
+    var imgLoad = "url(/images/fog-small.jpg)";
+}
+else if (width < (720) && keyword == 'rain') {
+    var imgLoad = "url(/images/rain-small.jpg)";
+}
+else if (width < (720) && keyword == 'snow') {
+    var imgLoad = "url(/images/snow-small.jpg)";
+}
+else if (width < (720) && keyword == 'cloudy') {
+    var imgLoad = "url(/images/clouds-small.jpg)";
+}
+else {
+    console.log("Img Error");
+}
+console.log(`imgLoad is: ${imgLoad}`);
+}
 
 /* ****************************************
  *   Fetch data
@@ -301,7 +396,10 @@ function buildPage() {
     console.log(latlon);
     // The latitude and longitude should match what was stored in session storage.
     // Get the condition keyword and set Background picture
-    changeSummaryImage(sessStore.getItem('shortForecast'));
+    //changeSummaryImage(sessStore.getItem('shortForecast'));
+    var cast = sessStore.getItem('shortForecast');
+    var background = getKeyword(cast);
+    changeSummaryBackground(background);
     /* Keep in mind that the value may be different than 
     what you need for your CSS to replace the image. You 
     may need to make some adaptations for it to work.*/
@@ -423,3 +521,4 @@ for (let i = 0, x = 12; i < x; i++) {
 // Change the status of the containers
 contentContainer.setAttribute('class', ''); // removes the hide class from main
 statusContainer.setAttribute('class', 'hide'); // hides the status container
+
