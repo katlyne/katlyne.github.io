@@ -109,7 +109,7 @@ function buildWC(speed, temp) {
     wc = Math.floor(wc);
 
     //If chills is greater than temp, return temp
-    wc = (wc < temp) ? temp : wc;
+    //wc = (wc < temp) ? temp : wc;
 
     // Display the windchill
     console.log(`The wind chill is: ${wc}`);
@@ -219,46 +219,6 @@ function getKeyword(shortForecast) {
     }
     return keyword;
 
-
-
-
-// Pull correct image
-let width = window.innerWidth;
-console.log(`Width of screen: ${width}`);
-if ((width >= (720)) && (keyword == 'clear')) {
-    var imgLoad = "url(/images/clear-large.jpg)";
-}
-else if ((width >= (720)) && (keyword == 'rain')) {
-    var imgLoad = "url(/images/rain-large.jpg)";
-}
-else if (width >= (720) && keyword == 'fog') {
-    var imgLoad = "url(/images/fog-large.jpg)";
-}
-else if (width >= (720) && keyword == 'snow') {
-    var imgLoad = "url(/images/snow-large.jpg)";
-}
-else if (width >= (720) && keyword == 'cloudy') {
-    var imgLoad = "url(/images/clouds-large.jpg)";
-}
-else if (width < (720) && keyword == 'clear') {
-    var imgLoad = "url(/images/clear-small.jpg)";
-}
-else if (width < (720) && keyword == 'fog') {
-    var imgLoad = "url(/images/fog-small.jpg)";
-}
-else if (width < (720) && keyword == 'rain') {
-    var imgLoad = "url(/images/rain-small.jpg)";
-}
-else if (width < (720) && keyword == 'snow') {
-    var imgLoad = "url(/images/snow-small.jpg)";
-}
-else if (width < (720) && keyword == 'cloudy') {
-    var imgLoad = "url(/images/clouds-small.jpg)";
-}
-else {
-    console.log("Img Error");
-}
-console.log(`imgLoad is: ${imgLoad}`);
 }
 
 /* ****************************************
@@ -320,7 +280,6 @@ function fetchWeatherData(weatherURL) {
             const pwindgust = p.properties.relativeLocation.properties.windGust;
             console.log(pwindgust);
             sessStore.setItem("pwindgust", pwindgust);
-
             // Get the hourly data using another function - should include the forecast temp, condition icons and wind speeds. The data will be stored into seesion storage.
             getHourly(p.properties.forecastHourly);
         })
