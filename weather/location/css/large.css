@@ -151,3 +151,7 @@
     background-image: url("/weather/location/images/lazy/clouds-large.jpg");
   }
 }
+/* Constrain condition images */
+#conditions img{
+	max-width: 40px;
+  }

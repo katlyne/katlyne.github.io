@@ -609,63 +609,75 @@ left:65px;
 
 #conditions .o1 {
 position: absolute;
-top: -55px;
-left: 110px;
+top: -45px;
+left: 115px;
+max-width: 10%;
 }
 #conditions .o2 {
 position: absolute;
 top: -10px;
 left: 170px; 
+max-width: 10%;
 }
 #conditions .o3 {
 position: absolute;
-top: 55px;
-left: 173px;
+top: 60px;
+left: 180px;
+max-width: 10%;
 }
 #conditions .o4 {
 position: absolute;
 top: 120px;
-left: 170px;    
+left: 170px;  
+max-width: 10%;  
 }
 #conditions .o5 {
 position: absolute;
 top: 168px;
-left: 115px;
+left: 120px;
+max-width: 10%;
 }
 #conditions .o6 {
 position: absolute;
 top: 175px;
-left:53px;  
+left:65px;
+max-width: 10%;  
 }
 #conditions .o7 {
 position: absolute;
 top: 165px;
-left: -5px;
+left: 10px;
+max-width: 10%;
 }
 #conditions .o8 {
 position: absolute;
-top: 112px;
-left: -50px;    
+top: 120px;
+left: -40px; 
+max-width: 10%;   
 }
 #conditions .o9 {
 position: absolute;
 top: 55px;
-left: -60px;
+left: -50px;
+max-width: 10%;
 }
 #conditions .o10 {
 position: absolute;
 top: -2px;
-left: -50px;
+left: -40px;
+max-width: 10%;
 }
 #conditions .o11 {
 position: absolute;
-top: -55px;
-left: -8px;   
+top: -45px;
+left: 5px; 
+max-width: 10px;  
 }
 #conditions .o12 {
 position: absolute;
 top: -55px;
-left: 52px;
+left: 60px;
+max-width: 10%;
 }
 .i1 {
 position: absolute;
@@ -770,4 +782,7 @@ left:70px;
   .hide {
     display: none;
   }
-  
+  /* Constrain condition images */
+#conditions img{
+  max-width: 40px;
+}
