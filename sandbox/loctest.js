@@ -12,7 +12,9 @@ getGeoLocation();
 var sessStore = window.sessionStorage;
 var storage = window.localStorage;
 
-
+/* ************************************
+Get Longitude and Latitude (Current Location)
+*********************************** */
 // Gets longitude and latitude of current location
 function getGeoLocation() {
     const status = document.getElementById('status');
@@ -54,7 +56,10 @@ function getGeoLocation() {
        } // end else
 } //end getGeoLocation
 
-      // Gets location information from the NWS API
+/* ********************************
+Get Location information
+********************************* */
+// Gets location information from the NWS API
 function getLocation(locale) {
  const URL = "https://api.weather.gov/points/" + locale; 
  // NWS User-Agent header (built above) is the second parameter 
@@ -88,3 +93,72 @@ function getLocation(locale) {
   }) 
  .catch(error => console.log('There was a getLocation error: ', error)) 
 } // end getLocation function
+
+/* ***************************************
+Get Station ID
+*************************************** */
+// Gets weather station list and the nearest weather station ID from the NWS API
+function getStationId(stationsURL) { 
+  // NWS User-Agent header (built above) will be the second parameter 
+  fetch(stationsURL, idHeader) 
+  .then(function(response){
+    if(response.ok){ 
+     return response.json(); 
+    } 
+    throw new ERROR('Response not OK.');
+  })
+  .then(function (data) { 
+    // Let's see what we got back
+    console.log('From getStationId function:'); 
+    console.log(data);
+  
+    // Store station ID and elevation (in meters - will need to be converted to feet) 
+    let stationId = data.features[0].properties.stationIdentifier; 
+    let stationElevation = data.features[0].properties.elevation.value; 
+    console.log('Station and Elevation are: ' + stationId, stationElevation); 
+    // You may want to convert the elevation to feet before storing the value
+    // Store data to sessionStorage 
+    window.sessionStorage.setItem("stationId", stationId); 
+    window.sessionStorage.setItem("stationElevation", stationElevation); 
+ 
+    // Request the Current Weather for this station 
+    getWeather(stationId);
+   }) 
+  .catch(error => console.log('There was a getStationId error: ', error)) 
+ } // end getStationId function
+
+/* *******************************
+Get weather info
+******************************** */
+ // Gets current weather information for a specific weather station from the NWS API
+function getWeather(stationId) { 
+  // This is the URL for current observation data 
+  const URL = 'https://api.weather.gov/stations/' + stationId + '/observations/latest';
+  fetch(URL, idHeader) 
+  .then(function(response){
+    if(response.ok){ 
+     return response.json(); 
+    } 
+    throw new ERROR('Response not OK.');
+  })
+  .then(function (data) { 
+    // Let's see what we got back
+    console.log('From getWeather function:'); 
+    console.log(data);
+  
+    // Store current weather information to sessionStorage 
+    let currTemp = convertCelcius(data.properties.temperature.value);
+    window.sessionStorage.setItem("temperature", currTemp);
+    let windSpeed = mpsToMph(data.properties.windSpeed.value);
+    window.sessionStorage.setItem("windSpeed", windSpeed);
+    window.sessionStorage.setItem("windGust", data.properties.windGust.value);
+    window.sessionStorage.setItem("feelsLike", buildWC(windSpeed, currTemp));
+    window.sessionStorage.setItem("condition", data.properties.textDescription);
+ 
+    // Call the getForecast function
+ 
+    // Call the getHourly function
+    
+   }) 
+  .catch(error => console.log('There was a getWeather error: ', error)) 
+ } // end getWeather function
