@@ -1,0 +1,18 @@
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(function (position) {
+   const lat = position.coords.latitude;
+   const long = position.coords.longitude;
+
+   // Combine the values for use later
+   const locale = lat + "," + long;
+   console.log(`Locale values are: ${locale}.`);
+   // Store the values to session storage
+   window.sessionStorage.setItem("locale", locale);
+   window.sessionStorage.setItem("latitude", lat);
+   window.sessionStorage.setItem("longitude", long);
+
+  })
+ } else {
+  status.innerHTML = "Your browser doesn't support Geolocation or it is not enabled!";
+ } // end else
+} //end getGeoLocation

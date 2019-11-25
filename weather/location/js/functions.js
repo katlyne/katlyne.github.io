@@ -325,6 +325,7 @@ function getHourly(URL) {
             // Get the shortForecast value from the first hour (the current hour)
             // This will be the condition keyword for setting the background image
             sessStore.setItem('shortForecast', data.properties.periods[0].shortForecast);
+            
             // Call the buildPage function
             buildPage();
         })

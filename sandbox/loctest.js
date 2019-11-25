@@ -9,18 +9,11 @@ var idHeader = {
 
 // Call the function to get our location
 getGeoLocation();
-
-
+var sessStore = window.sessionStorage;
 var storage = window.localStorage;
 
 
-
-
-
-
-
-
-// Get longitude and latitude of current location
+// Gets longitude and latitude of current location
 function getGeoLocation() {
     const status = document.getElementById('status');
     status.innerHTML = 'Getting Location...';
@@ -31,11 +24,11 @@ function getGeoLocation() {
       
          // Combine the values
          const locale = lat + "," + long;
-         console.log(`Lat and Long are: ${locale}.`);
          storage.setItem("locale", locale);
+         console.log(`Lat and Long are: ${locale}.`);
          // Call getLocation function, send locale as a parameter
         getLocation(locale);
-      
+
         })
        } 
        else {
@@ -45,7 +38,7 @@ function getGeoLocation() {
         navigator.geolocation.getCurrentPosition(function (position) {
          const lat = position.coords.latitude;
          const long = position.coords.longitude;
-      
+
          // Combine the values for use later
          const locale = lat + "," + long;
          console.log(`Locale values are: ${locale}.`);
@@ -53,13 +46,13 @@ function getGeoLocation() {
          window.sessionStorage.setItem("locale", locale);
          window.sessionStorage.setItem("latitude", lat);
          window.sessionStorage.setItem("longitude", long);
-      
+
         })
        } 
        else {
         status.innerHTML = "Your browser doesn't support Geolocation or it is not enabled!";
        } // end else
-      } //end getGeoLocation
+} //end getGeoLocation
 
       // Gets location information from the NWS API
 function getLocation(locale) {
@@ -81,7 +74,7 @@ function getLocation(locale) {
    window.sessionStorage.setItem("locState", data.properties.relativeLocation.properties.state);
    let fullName = data.properties.relativeLocation.properties.city + ", " + data.properties.relativeLocation.properties.state;
    window.sessionStorage.setItem("fullName", fullName); 
-   
+
    // Store three URL's for stationId's, forecast and hourly forecast
    // The URL's are in the returned location data object
    window.sessionStorage.setItem("hourlyURL", data.properties.forecastHourly);
