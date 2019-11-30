@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title data-city="" id="title"></title>
+    <meta name="author" content="Katlyne Chinain">
+    <meta name="description" content="Home">
+    <link href="/css/normalize.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/weather/location/images/icon.ico" />
+    <link href="/weather/location/css/small-min.css" rel="stylesheet" media="screen">
+    <link href="/weather/location/css/medium.css" rel="stylesheet" media="screen and (min-width: 32.5em)">
+    <link href="/weather/location/css/large-min.css" rel="stylesheet" media="screen and (min-width: 1024px)">
+    <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet">
+    <script src="/weather/location/js/functions.js" async></script>
+</head>
+
+<body id="home">
+    <div id="wrapper">
+        <header>
+            <div class="logo-box">
+                <img class="littlelogo" src="/weather/images/logo.png" alt="logo picture">
+
+                <section>
+                    <h1 id="siteName">Weathumbrella</h1>
+                    <span id="tagline">Gone with the wind: 100% Accurate and Weatherproof</span>
+                </section>
+            </div>
+        </header>
+        <nav id="nav">
+
+            <ul class="navigation">
+                <li><a href="#" onclick="toggleMenu()">&#9776; Menu</a> </li>
+                <li><a href="" title="go to Home">Home</a></li>
+                <li><a href="/weather/location/preston.html" title="go to Preston page">Preston</a></li>
+                <li><a href="/weather/location/sodasprings.html" title="go to Soda Springs">Soda Springs</a></li>
+                <li><a href="/weather/location/fishhaven.html" title="go to Fish Haven">Fish Haven</a></li>
+                <li><a href="/weather/location/stormcenter.html" title="go to Storm Center">Storm Center</a></li>
+                <li><a href="/weather/location/gallery.html" title="go to Gallery">Gallery</a></li>
+                
+            </ul>
+        </nav>
+        <section id="status">Please be patient while I get your weather information.</section>
+
+        <main id="main-container" class="hide">
+                <h2></h2>
+                <h3>GPS Coordinates</h3>
+                <p id="latLong"></p>
+            <section id="currweather">
+                <section class="current">
+                    <div id="currenthotdegree">58&#176;</div>
+                    <div id="currentdegree">10&#8457;</div>
+                    <div id="currentcolddegree">34&#176;</div>
+                    <div id="speed"> 25mph</div>
+                    <div id="feels">Feels like: </div>
+                    <div id="gusts">Gusts: 8mph</div>
+                </section>
+                <div class="boites">
+                    <section class="temperatures">
+                        <h3>Forecast Temperatures</h3>
+                        <section id="temperatures">
+                            <div class="circle">
+                            <div class="o1">20</div>
+                            <div class="o2">20</div>
+                            <div class="o3">20</div>
+                            <div class="o4">20</div>
+                            <div class="o5">10</div>
+                            <div class="o6">20</div>
+                            <div class="o7">20</div>
+                            <div class="o8">30</div>
+                            <div class="o9">20</div>
+                            <div class="o10">10</div>
+                            <div class="o11">99</div>
+                            <div class="o12">40</div>
+                            <div class="symbol">&#8457;</div>
+                            <div class="i1">1</div>
+                            <div class="i2">2</div>
+                            <div class="i3">3</div>
+                            <div class="i4">4</div>
+                            <div class="i5">5</div>
+                            <div class="i6">6</div>
+                            <div class="i7">7</div>
+                            <div class="i8">8</div>
+                            <div class="i9">9</div>
+                            <div class="i10">10</div>
+                            <div class="i11">11</div>
+                            <div class="i12">12</div>
+                            <div class="ball"></div>
+                        </div>
+                        </section>
+                        
+                    </section>
+                    <section class="precipitation">
+                        <h3>Wind</h3>
+                        <section id="wind">
+                            <div class="circle">
+                            <div class="o1">20</div>
+                            <div class="o2">20</div>
+                            <div class="o3">20</div>
+                            <div class="o4">20</div>
+                            <div class="o5">10</div>
+                            <div class="o6">20</div>
+                            <div class="o7">20</div>
+                            <div class="o8">30</div>
+                            <div class="o9">20</div>
+                            <div class="o10">10</div>
+                            <div class="o11">99</div>
+                            <div class="o12">40</div>
+                            <div class="symbol">&#9730;%</div>
+                            <div class="i1">1</div>
+                            <div class="i2">2</div>
+                            <div class="i3">3</div>
+                            <div class="i4">4</div>
+                            <div class="i5">5</div>
+                            <div class="i6">6</div>
+                            <div class="i7">7</div>
+                            <div class="i8">8</div>
+                            <div class="i9">9</div>
+                            <div class="i10">10</div>
+                            <div class="i11">11</div>
+                            <div class="i12">12</div>
+                            <div class="ball"></div>
+                        </div>
+                        </section>
+                    </section>
+                    <section class="conditions">
+                        <h3>Forecast Conditions</h3>
+                            <section id="conditions">
+                                <div class="circle">
+                                <div class="o1">&#9728;</div>
+                                <div class="o2">&#9729;</div>
+                                <div class="o3">&#9730;</div>
+                                <div class="o4">&#10052;</div>
+                                <div class="o5">&#9728;</div>
+                                <div class="o6">&#9729;</div>
+                                <div class="o7">&#9730;</div>
+                                <div class="o8">&#10052;</div>
+                                <div class="o9">&#9728;</div>
+                                <div class="o10">&#9729; </div>
+                                <div class="o11">&#9730;</div>
+                                <div class="o12">&#10052;</div>
+                                <div class="symbol"></div>
+                                <div class="i1">1</div>
+                                <div class="i2">2</div>
+                                <div class="i3">3</div>
+                                <div class="i4">4</div>
+                                <div class="i5">5</div>
+                                <div class="i6">6</div>
+                                <div class="i7">7</div>
+                                <div class="i8">8</div>
+                                <div class="i9">9</div>
+                                <div class="i10">10</div>
+                                <div class="i11">11</div>
+                                <div class="i12">12</div>
+                                <div class="ball"></div>
+                            </div>
+                            </section>
+                    </section>
+                </div>
+            </section>
+        </main>
+        <footer class="primaryNav">
+            &copy; 2019 | Weathumbrella |
+            <br>
+            Today's Date: <span id="currentdate"></span>
+            <br>
+            Last uptated: <span id="lastModified"></span>
+	    </footer>
+        <script src="/weather/location/js/functions.js"></script>
+        <script src="/weather/location/js/geo_loc.js"></script>
+    </div>
+</body>
+
+</html>
