@@ -14,7 +14,7 @@
     <link href="/weather/location/css/large-min.css" rel="stylesheet" media="screen and (min-width: 1024px)">
     <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet">
-    <script src="/weather/location/js/functions.js" async></script>
+    <script src="/weather/location/js/funct.js" async></script>
 </head>
 
 <body id="home">
@@ -33,7 +33,7 @@
 
             <ul class="navigation">
                 <li><a href="#" onclick="toggleMenu()">&#9776; Menu</a> </li>
-                <li><a href="/weather/location/index.html" title="go to Home">Home</a></li>
+                <li><a href="" title="go to Home">Home</a></li>
                 <li><a href="/weather/location/preston.html" title="go to Preston page">Preston</a></li>
                 <li><a href="/weather/location/sodasprings.html" title="go to Soda Springs">Soda Springs</a></li>
                 <li><a href="/weather/location/fishhaven.html" title="go to Fish Haven">Fish Haven</a></li>
@@ -45,7 +45,7 @@
         <section id="status">Please be patient while I get your weather information.</section>
 
         <main id="main-container" class="hide">
-                <h2>Preston</h2>
+                <h2 id="contentHeading">Preston</h2>
                 <h3>GPS Coordinates</h3>
                 <p id="latLong">42.0963° N, 111.8766° W</p>
             <section id="currweather">
@@ -168,7 +168,7 @@
             <br>
             Last uptated: <span id="lastModified"></span>
 	    </footer>
-        <script src="/weather/location/js/functions.js"></script>
+        <script src="/weather/location/js/funct.js"></script>
     </div>
 </body>
 

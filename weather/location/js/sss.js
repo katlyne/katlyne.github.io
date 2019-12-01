@@ -32,8 +32,8 @@ lastModified();
 // menuButton.addEventListener('click', menuButton);
 
 //Get weather json data
-//let weatherURL = "/weather/location/js/idahoweather.json";
-//fetchWeatherData(weatherURL);
+let weatherURL = "/weather/location/js/idahoweather.json";
+fetchWeatherData(weatherURL);
 
 getGeoLocation();
 
@@ -227,7 +227,7 @@ return keyword;
 /* ****************************************
 * Fetch data
 ***************************************** */
-/*function fetchWeatherData(weatherURL) {
+function fetchWeatherData(weatherURL) {
 let cityName = title.dataset.city // "soda-springs"'Preston'; // The data we want from the weather.json file
 console.log(cityName);
 fetch(weatherURL)
@@ -291,7 +291,7 @@ console.log('There was a fetch problem: ', error.message);
 statusContainer.innerHTML = 'Sorry, the data could not be processed.';
 })
 }
-*/
+
 /* *************************************
 * Get Hourly Forecast data
 ************************************* */
@@ -348,13 +348,13 @@ pageTitle.insertBefore(fullNameNode, pageTitle.childNodes[0]);
 // When this is done the title should look something like this:
 // Preston, Idaho | The Weather Site
 // Get the h1 to display the city location
-let contentHeading = document.querySelector('#contentHeading');
+let contentHeading = document.querySelector('#siteName');
 contentHeading.innerHTML = sessStore.getItem('fullName');
 // The h1 in the main element should now say "Preston, Idaho"
 // Get the coordinates container for the location
-let latlon = document.querySelector('#latLong');
+let latLong = document.querySelector('#latLong');
 console.log(latlon);
-latlon.innerHTML = sessStore.getItem('latLong') + " Elevation: " + sessStore.getItem("stationElevation") + "ft";;
+latLong.innerHTML = sessStore.getItem('latLong');
 console.log(latlon);
 // The latitude and longitude should match what was stored in session storage.
 // Get the condition keyword and set Background picture
