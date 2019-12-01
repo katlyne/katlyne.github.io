@@ -31,10 +31,6 @@ lastModified();
 //const menuButton = document.querySelector("#menuBtn");
 // menuButton.addEventListener('click', menuButton);
 
-//Get weather json data
-//let weatherURL = "/weather/location/js/idahoweather.json";
-//fetchWeatherData(weatherURL);
-
 getGeoLocation();
 
 });
@@ -42,17 +38,17 @@ getGeoLocation();
 
 //Move to originial file
 
-(function() {
+(function () {
 
-var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-Date.prototype.getMonthName = function() {
-return months[ this.getMonth() ];
+Date.prototype.getMonthName = function () {
+return months[this.getMonth()];
 };
-Date.prototype.getDayName = function() {
-return days[ this.getDay() ];
+Date.prototype.getDayName = function () {
+return days[this.getDay()];
 };
 
 })();
@@ -64,7 +60,7 @@ var month = now.getMonthName();
 var date = now.getDate();
 var year = now.getFullYear();
 
-document.getElementById("currentdate").innerHTML=day + ", " + date + " " + month + " " +
+document.getElementById("currentdate").innerHTML = day + ", " + date + " " + month + " " +
 year;
 
 
@@ -202,96 +198,23 @@ console.log(`The used name is: ${x.className}`);
 function getKeyword(shortForecast) {
 let forecast = shortForecast.toLowerCase();
 var keyword;
-if (forecast.includes("sunny") || forecast.includes("clear")){
+if (forecast.includes("sunny") || forecast.includes("clear")) {
 keyword = "clear";
-}
-else if (forecast.includes("cloud") || forecast.includes("overcast")){
+} else if (forecast.includes("cloud") || forecast.includes("overcast")) {
 keyword = "cloudy";
-}
-else if (forecast.includes("snow") || forecast.includes("snow showers") || forecast.includes("sleet")){
+} else if (forecast.includes("snow") || forecast.includes("snow showers") || forecast.includes("sleet")) {
 keyword = "snow";
-}
-else if (forecast.includes("rain") || forecast.includes("thunder") || forecast.includes("showers")){
+} else if (forecast.includes("rain") || forecast.includes("thunder") || forecast.includes("showers")) {
 keyword = "rain";
-}
-else if (forecast.includes("fog")){
+} else if (forecast.includes("fog")) {
 keyword = "fog";
-}
-else {
+} else {
 console.log("Forecast Error");
 }
 return keyword;
 
 }
 
-/* ****************************************
-* Fetch data
-***************************************** */
-/*function fetchWeatherData(weatherURL) {
-let cityName = title.dataset.city // "soda-springs"'Preston'; // The data we want from the weather.json file
-console.log(cityName);
-fetch(weatherURL)
-.then(function (response) {
-if (response.ok) {
-return response.json();
-}
-throw new ERROR('Network response was not OK.');
-})
-.then(function (data) {
-//Check the data objet that was retrieved
-console.log(data);
-// data is the full JavaScript object, but we only want the preston part shorten the variable and focus only on the data we want to reduce typing
-let p = data[cityName];
-
-// *********** Get the location information **************
-let locName = p.properties.relativeLocation.properties.city;
-console.log(locName);
-let locState = p.properties.relativeLocation.properties.state;
-// Put them togather
-let fullName = locName + ', ' + locState;
-// See if it worked, using ticks around the content in the log
-console.log(`fullName is: ${fullName}`);
-// Get the longitude and latitude and combine them to a comma separated single string
-let latLong = p.properties.relativeLocation.geometry.coordinates[1] + "," + p.properties.relativeLocation.geometry.coordinates[0];
-console.log(latLong);
-// Create a JSON object containing the full name, latitude and longitude and store it into local storage.
-const prestonData = JSON.stringify({
-fullName,
-latLong
-});
-locStore.setItem("Preston, ID", prestonData);
-// ********** Get the current conditions information ***********
-// As the data is extracted from the JSON, store it into session storage
-sessStore.setItem("fullName", fullName);
-sessStore.setItem("latLong", latLong);
-console.log(latLong);
-// Get the temperature data
-const prestontemp = p.properties.relativeLocation.properties.temperature;
-console.log(prestontemp);
-const phightemp = p.properties.relativeLocation.properties.highTemp;
-console.log(phightemp);
-sessStore.setItem("phightemp", phightemp);
-const plowtemp = p.properties.relativeLocation.properties.lowTemp;
-console.log(plowtemp);
-sessStore.setItem("plowtemp", plowtemp);
-//const prestontemp = JSON.stringify({temperature});
-sessStore.setItem("prestontemp", prestontemp);
-// Get the wind data
-const pwindspeed = p.properties.relativeLocation.properties.windSpeed;
-console.log(pwindspeed);
-sessStore.setItem("pwindspeed", pwindspeed);
-const pwindgust = p.properties.relativeLocation.properties.windGust;
-console.log(pwindgust);
-sessStore.setItem("pwindgust", pwindgust);
-// Get the hourly data using another function - should include the forecast temp, condition icons and wind speeds. The data will be stored into seesion storage.
-getHourly(p.properties.forecastHourly);
-})
-.catch(function (error) {
-console.log('There was a fetch problem: ', error.message);
-statusContainer.innerHTML = 'Sorry, the data could not be processed.';
-})
-}
-*/
 /* *************************************
 * Get Hourly Forecast data
 ************************************* */
@@ -306,7 +229,6 @@ throw new ERROR('Response not OK.');
 .then(function (data) { // log result of fetch to console
 console.log('Data from getHourly function:');
 console.log(data); // Let's see what we got back
-
 // Store 12 hours of data to session storage
 var hourData = [];
 let todayDate = new Date();
@@ -324,7 +246,6 @@ sessStore.setItem(`hour${nowHour}`, hourData[nowHour]);
 nowHour = 1;
 }
 }
-
 // Get the shortForecast value from the first hour (the current hour)
 // This will be the condition keyword for setting the background image
 sessStore.setItem('shortForecast', data.properties.periods[0].shortForecast);
@@ -350,6 +271,7 @@ pageTitle.insertBefore(fullNameNode, pageTitle.childNodes[0]);
 // Get the h1 to display the city location
 let contentHeading = document.querySelector('#contentHeading');
 contentHeading.innerHTML = sessStore.getItem('fullName');
+console.log(fullName);
 // The h1 in the main element should now say "Preston, Idaho"
 // Get the coordinates container for the location
 let latlon = document.querySelector('#latLong');
@@ -386,7 +308,7 @@ console.log(speed);
 gust.innerHTML = "Gust: " + sessStore.getItem('pwindgust');
 console.log(gust);
 // Calculate feel like temp
-console.log(buildWC(39,5.1));
+console.log(buildWC(39, 5.1));
 feelTemp.innerHTML = "Feel like: " + buildWC(sessStore.getItem('pwindspeed'), sessStore.getItem('prestontemp')) + "°F";
 };
 
@@ -508,8 +430,7 @@ console.log(`Lat and Long are: ${locale}.`);
 // Call getLocation function, send locale as a parameter
 getLocation(locale);
 })
-}
-else {
+} else {
 status.innerHTML = "Your browser doesn't support Geolocation or it is not enabled!";
 } // end else
 if (navigator.geolocation) {
@@ -524,8 +445,7 @@ window.sessionStorage.setItem("locale", locale);
 window.sessionStorage.setItem("latitude", lat);
 window.sessionStorage.setItem("longitude", long);
 })
-}
-else {
+} else {
 status.innerHTML = "Your browser doesn't support Geolocation or it is not enabled!";
 } // end else
 } //end getGeoLocation
@@ -538,8 +458,8 @@ function getLocation(locale) {
 const URL = "https://api.weather.gov/points/" + locale;
 // NWS User-Agent header (built above) is the second parameter
 fetch(URL, idHeader)
-.then(function(response){
-if(response.ok){
+.then(function (response) {
+if (response.ok) {
 return response.json(); //return Json file if it is ok
 }
 throw new ERROR('Response not OK.');
@@ -557,7 +477,7 @@ console.log(locName);
 let locState = data.properties.relativeLocation.properties.state;
 window.sessionStorage.setItem("locState", data.properties.relativeLocation.properties.state);
 console.log(locState);
-let fullName = locName + ", " + locState;
+let fullName = data.properties.relativeLocation.properties.city + ", " + data.properties.relativeLocation.properties.state;
 window.sessionStorage.setItem("fullName", fullName);
 console.log(`getLocation(): Value of location: ${fullName}`);
 
@@ -583,8 +503,8 @@ Get Station ID
 function getStationId(stationsURL) {
 // NWS User-Agent header (built above) will be the second parameter
 fetch(stationsURL, idHeader)
-.then(function(response){
-if(response.ok){
+.then(function (response) {
+if (response.ok) {
 return response.json();
 }
 throw new ERROR('Response not OK.');
@@ -615,8 +535,8 @@ function getWeather(stationId) {
 // This is the URL for current observation data
 const URL = 'https://api.weather.gov/stations/' + stationId + '/observations/latest';
 fetch(URL, idHeader)
-.then(function(response){
-if(response.ok){
+.then(function (response) {
+if (response.ok) {
 return response.json();
 }
 throw new ERROR('Response not OK.');
@@ -643,8 +563,8 @@ getHourly(sessStore.getItem("forecastHourlyURL"));
 } // end getWeather function
 function getForecast(URL) {
 fetch(URL, idHeader)
-.then(function(response){
-if(response.ok){
+.then(function (response) {
+if (response.ok) {
 return response.json();
 }
 throw new ERROR("Response not OK.")
@@ -673,10 +593,10 @@ return (meters * 3.281).toFixed(0);
 
 // converts celsius to fahrenheit
 function convertCelcius(celsiusTemp) {
-return ((celsiusTemp * 9/5) + 32).toFixed(0);
+return ((celsiusTemp * 9 / 5) + 32).toFixed(0);
 }
 
 // converts meters/sec to miles/hour
-function mmpsToMph (speed) {
+function mmpsToMph(speed) {
 return (speed / 2.237).toFixed(1);
 }
