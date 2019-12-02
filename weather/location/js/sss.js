@@ -282,12 +282,12 @@ function buildPage() {
     // Preston, Idaho | The Weather Site  
     // Get the h1 to display the city location
     let contentHeading = document.querySelector('#contentHeading');
-    contentHeading.innerHTML = sessStore.getItem('fullName');
+    contentHeading.innerHTML = locStore.getItem('fullName');
     // The h1 in the main element should now say "Preston, Idaho"                  
     // Get the coordinates container for the location
     let latlon = document.querySelector('#latLong');
     console.log(latlon);
-    latlon.innerHTML = sessStore.getItem('locale');
+    latlon.innerHTML = locStore.getItem('locale');
     console.log(latlon);
     // The latitude and longitude should match what was stored in session storage.
     // Get the condition keyword and set Background picture
@@ -309,7 +309,7 @@ function buildPage() {
     console.log(highTemp);
     loTemp.innerHTML = sessStore.getItem('low') + "°F";
     console.log(loTemp);
-    currentTemp.innerHTML = sessStore.getItem('temperature') + "°F";
+    currentTemp.innerHTML = locStore.getItem('temperature') + "°F";
     console.log(currentTemp);
     // Set the wind information
     let speed = $('#speed');
