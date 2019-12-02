@@ -276,8 +276,9 @@ console.log(fullName);
 // Get the coordinates container for the location
 let latlon = document.querySelector('#latLong');
 console.log(latlon);
-latlon.innerHTML = sessStore.getItem('latLong') + " Elevation: " + sessStore.getItem("stationElevation") + "ft";;
+latlon.innerHTML = sessStore.getItem('latLong') + " Elevation: " + sessStore.getItem("stationElevation") + "ft";
 console.log(latlon);
+console.log(stationElevation);
 // The latitude and longitude should match what was stored in session storage.
 // Get the condition keyword and set Background picture
 //changeSummaryImage(sessStore.getItem('shortForecast'));
