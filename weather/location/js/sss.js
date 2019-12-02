@@ -594,9 +594,13 @@ function getWeather(stationId) {
             if (data.properties.periods[0].isDayTime == true) {
                 sessStore.setItem("high", data.properties.periods[0].temperature);
                 sessStore.setItem("low", data.properties.periods[1].temperature);
+                locStore.setItem("high", data.properties.periods[0].temperature);
+                locStore.setItem("low", data.properties.periods[1].temperature);
             } else {
                 sessStore.setItem("low", data.properties.periods[0].temperature);
                 sessStore.setItem("high", data.properties.periods[1].temperature);
+                locStore.setItem("low", data.properties.periods[0].temperature);
+                locStore.setItem("high", data.properties.periods[1].temperature);
             }
         })
         .catch(error => console.log('There was a getForecast error: ', error))
