@@ -3,8 +3,8 @@
 // Geolocation Script
 // 
 
-var locStor = window.localStorage;
-var sesStor = window.sessionStorage;
+var locStore = window.localStorage;
+var sessStore = window.sessionStorage;
 var $ = document.querySelector.bind(document);
 var $$ = document.querySelectorAll.bind(document);
 
@@ -24,7 +24,7 @@ function getGeoLocation() {
         const locale = lat.toFixed(4) + "," + long.toFixed(4); // combine into locale 
        // Combine the values
        const locale = lat + "," + long;
-       storage.setItem("locale", locale);
+       locStore.setItem("locale", locale);
        console.log(`Lat and Long are: ${locale}.`);
        // Call getLocation function, send locale as a parameter
       getLocation(locale);

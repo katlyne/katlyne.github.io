@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //Get weather json data
     getGeoLocation();
-
 });
 
 
@@ -225,12 +224,11 @@ function getKeyword(shortForecast) {
 
 }
 
-
 /* *************************************
  *  Get Hourly Forecast data
  ************************************* */
 function getHourly(URL) {
-    fetch(URL, idHeader )
+    fetch(URL)
         .then(function (response) {
             if (response.ok) {
                 return response.json();
@@ -289,7 +287,7 @@ function buildPage() {
     // Get the coordinates container for the location
     let latlon = document.querySelector('#latLong');
     console.log(latlon);
-    latlon.innerHTML = sessStore.getItem('latLong');
+    latlon.innerHTML = sessStore.getItem('locale');
     console.log(latlon);
     // The latitude and longitude should match what was stored in session storage.
     // Get the condition keyword and set Background picture
@@ -307,22 +305,22 @@ function buildPage() {
     let loTemp = $('#currentcolddegree');
     let currentTemp = $('#currentdegree');
     let feelTemp = $('#feels');
-    highTemp.innerHTML = sessStore.getItem('phightemp') + "°F";
+    highTemp.innerHTML = sessStore.getItem('high') + "°F";
     console.log(highTemp);
-    loTemp.innerHTML = sessStore.getItem('plowtemp') + "°F";
+    loTemp.innerHTML = sessStore.getItem('low') + "°F";
     console.log(loTemp);
-    currentTemp.innerHTML = sessStore.getItem('prestontemp') + "°F";
+    currentTemp.innerHTML = sessStore.getItem('temperature') + "°F";
     console.log(currentTemp);
     // Set the wind information
     let speed = $('#speed');
     let gust = $('#gusts');
-    speed.innerHTML = "Wind Speed: " + sessStore.getItem('pwindspeed');
+    speed.innerHTML = "Wind Speed: " + sessStore.getItem('windSpeed');
     console.log(speed);
-    gust.innerHTML = "Gust: " + sessStore.getItem('pwindgust');
+    gust.innerHTML = "Gust: " + sessStore.getItem('windGust');
     console.log(gust);
     // Calculate feel like temp
     console.log(buildWC(39,5.1));
-    feelTemp.innerHTML = "Feel like: " + buildWC(sessStore.getItem('pwindspeed'), sessStore.getItem('prestontemp')) + "°F";
+    feelTemp.innerHTML = "Feel like: " + buildWC(sessStore.getItem('windSpeed'), sessStore.getItem('temperature')) + "°F";
 };
 
 // **********  Set the Time Indicators  **********
@@ -330,7 +328,7 @@ function buildPage() {
 console.log(now);
 var currentHour = now.getHours();
 console.log(currentHour);
-const indicatorHour;
+let indicatorHour;
 // If hour is greater than 12, subtract 12
 if (currentHour > 12) {
  indicatorHour = currentHour - 12;
@@ -434,6 +432,7 @@ function getGeoLocation() {
          // Combine the values
          const locale = lat + "," + long;
          locStore.setItem("locale", locale);
+         sessStore.setItem("locale", locale);
          console.log(`Lat and Long are: ${locale}.`);
          // Call getLocation function, send locale as a parameter
         getLocation(locale);
@@ -469,6 +468,8 @@ Get Location information
 // Gets location information from the NWS API
 function getLocation(locale) {
  const URL = "https://api.weather.gov/points/" + locale; 
+ console.log(URL);
+ locStore.setItem("URL", URL);
  // NWS User-Agent header (built above) is the second parameter 
  fetch(URL, idHeader) 
  .then(function(response){
@@ -554,19 +555,65 @@ function getWeather(stationId) {
     console.log(data);
   
     // Store current weather information to sessionStorage 
-    let currTemp = convertCelcius(data.properties.temperature.value);
-    window.sessionStorage.setItem("temperature", currTemp);
-    let windSpeed = mpsToMph(data.properties.windSpeed.value);
-    window.sessionStorage.setItem("windSpeed", windSpeed);
-    window.sessionStorage.setItem("windGust", data.properties.windGust.value);
-    window.sessionStorage.setItem("feelsLike", buildWC(windSpeed, currTemp));
-    window.sessionStorage.setItem("condition", data.properties.textDescription);
- 
+    sessStore.setItem("temperature", convertCelcius(data.properties.temperature.value));
+    console.log(temperature);
+    sessStore.setItem("windGust", data.properties.windGust.value);
+    console.log(windGust);
+    sessStore.setItem("windSpeed", data.properties.windSpeed.value);
+    console.log(windSpeed);
+    sessStore.setItem("feelsLike", buildWC(windSpeed, currTemp));
+    console.log(feelsLike);
+
     // Call the getForecast function
- 
+    getForecast();
     // Call the getHourly function
-    
+    getHourly(storage.getItem('Hourly-URL'));
    }) 
   .catch(error => console.log('There was a getWeather error: ', error)) 
  } // end getWeather function
 
+
+//GetForecast 
+ function getForecast() {
+
+    const foreCastURL = storage.getItem('Forecast-URL');
+    console.log(foreCastURL);
+
+    fetch(foreCastURL, idHeader)
+        .then(function (response) {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new ERROR('Response not OK.');
+        })
+        .then(function (data) {
+            // Let's see what we got back
+            console.log('Json object from getForecast function:');
+            console.log(data);
+            // Store data to localstorage 
+            if (data.properties.periods[0].isDayTime == true) {
+                sessStore.setItem("high", data.properties.periods[0].temperature);
+                sessStore.setItem("low", data.properties.periods[1].temperature);
+            } else {
+                sessStore.setItem("low", data.properties.periods[0].temperature);
+                sessStore.setItem("high", data.properties.periods[1].temperature);
+            }
+        })
+        .catch(error => console.log('There was a getForecast error: ', error))
+
+}
+
+// converts meters to feet
+function metersToFeet(meters) {
+    return (meters * 3.281).toFixed(0);
+    }
+    
+    // converts celsius to fahrenheit
+    function convertCelcius(celsiusTemp) {
+    return ((celsiusTemp * 9 / 5) + 32).toFixed(0);
+    }
+    
+    // converts meters/sec to miles/hour
+    function mmpsToMph(speed) {
+    return (speed / 2.237).toFixed(1);
+    }
