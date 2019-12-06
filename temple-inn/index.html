@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +9,17 @@
     <title>Temples</title>
     <link href="/css/normalize.css" rel="stylesheet">
     <link rel="shortcut icon" href="" />
-    <link href="/temple-inn/temple-inn-small.css" rel="stylesheet" media="screen">
-    <link href="/temple-inn/temple-inn-medium.css" rel="stylesheet" media="screen and (min-width: 32.5em)">
-    <link href="/temple-inn/temple-inn-large.css" rel="stylesheet" media="screen and (min-width: 1024px)">
+    <link href="/temple-inn/css/temple-inn-small.css" rel="stylesheet" media="screen">
+    <link href="/temple-inn/css/temple-inn-medium.css" rel="stylesheet" media="screen and (min-width: 32.5em)">
+    <link href="/temple-inn/css/temple-inn-large.css" rel="stylesheet" media="screen and (min-width: 1024px)">
 </head>
+
 <body>
     <header>
         <div class="logo-box">
-            <img class="logo" src="" alt="logo picture">
+            <img class="logo" src="/temple-inn/img/logo/logo.jpeg" alt="logo picture">
             <section>
-                <h1 id="siteName">Temple Inn & Suites</h1>
+                <h1 id="siteName">Temples Inn & Suites</h1>
             </section>
         </div>
     </header>
@@ -25,20 +27,118 @@
         <ul>
             <li><a href="#" onclick="toggleMenu()">&#9776; Menu</a> </li>
             <li><a href="/temple-inn/index.html" title="go to Home">Home</a></li>
-            <li><a href="/temple-inn/temple-inn.html" title="go to Temples">Temples</a></li>
-            <li><a href="/temple-inn/reservation.html" title="go to Reservation"></a>Reservation</li>
-            <li><a href="/temple-inn/service.html" title=>Services</a></li>
-            <li><a href="/temple-inn/contactus.html" title="go to Contact Us"></a>Contact Us</li>
+            <li><a href="/temple-inn/html/temple-inn.html" title="go to Temples">Temples</a></li>
+            <li><a href="/temple-inn/html/reservation.html" title="go to Reservation">Reservation</a></li>
+            <li><a href="/temple-inn/html/service.html" title="go to services">Services</a></li>
+            <li><a href="/temple-inn/html/contactus.html" title="go to Contact Us">Contact Us</a></li>
         </ul>
     </nav>
     <main id="home">
-       
+
+        <section>
+            <!-- Slideshow container -->
+            <div class="slideshow-container">
+
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 8</div>
+                    <img src="/temple-inn/img/tahiti/tahititmpl.jpg" style="width:100%">
+                    <div class="text">Caption Text</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 8</div>
+                    <img src="/temple-inn/img/tahiti/danse.jpg" style="width:100%">
+                    <div class="text">Caption Two</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 8</div>
+                    <img src="/temple-inn/img/tahiti/canoebreakfast.jpg" style="width:100%">
+                    <div class="text">Caption Three</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">4 / 8</div>
+                    <img src="/temple-inn/img/tahiti/hotess.jpg" style="width:100%">
+                    <div class="text">Caption Four</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">5 / 8</div>
+                    <img src="/temple-inn/img/tahiti/mer.jpg" style="width:100%">
+                    <div class="text">Caption Five</div>
+                </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">6 / 8</div>
+                    <img src="/temple-inn/img/tahiti/paysage.jpg" style="width:100%">
+                    <div class="text">Caption Six</div>
+                </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">7 / 8</div>
+                    <img src="/temple-inn/img/tahiti/pirogue.jpg" style="width:100%">
+                    <div class="text">Caption Seven</div>
+                </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">8 / 8</div>
+                    <img src="" style="width:100%">
+                    <div class="text">Caption Eight</div>
+                </div>
+
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+
+            <!-- The dots/circles -->
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+                <span class="dot" onclick="currentSlide(7)"></span>
+                <span class="dot" onclick="currentSlide(8)"></span>
+
+            </div>
+        </section>
+        <script>
+            
+        var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 4000); // Change image every 2 seconds
+}</script>
     </main>
     <footer>
         &copy; 2019 | Temple Inn & Suites | <a href="/temple-inn/contactus.html">Contact Us</a>
+        <div class="social">
+            <a href="https://www.facebook.com/" target="_blank"><img
+                    src="https://cdn.glitch.com/4e91f6af-72b3-4319-abc9-79cb97a8e4ec%2Ffacebook.png?1558028512892"
+                    alt="facebook logo"></a>
+            <a href="https://twitter.com/login?lang=fr" target="_blank"><img
+                    src="https://cdn.glitch.com/4e91f6af-72b3-4319-abc9-79cb97a8e4ec%2Ftwitter.png?1558028549484"
+                    alt="twittter logo"></a>
+            <a href="https://www.instagram.com/?hl=fr" target="_blank"><img
+                    src="https://cdn.glitch.com/4e91f6af-72b3-4319-abc9-79cb97a8e4ec%2Finstagram.png?1558028524897"
+                    alt="instagram logo"></a>
+        </div>
         <br>
         Today's Date: <span id="currentdate"></span>
     </footer>
     <script></script>
 </body>
+
 </html>
