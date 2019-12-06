@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Katlyne Chinain">
+    <title>Temples</title>
+    <link href="/css/normalize.css" rel="stylesheet">
+    <link rel="shortcut icon" href="" />
+    <link href="/temple-inn/temple-inn-small.css" rel="stylesheet" media="screen">
+    <link href="/temple-inn/temple-inn-medium.css" rel="stylesheet" media="screen and (min-width: 32.5em)">
+    <link href="/temple-inn/temple-inn-large.css" rel="stylesheet" media="screen and (min-width: 1024px)">
+</head>
+<body>
+    <header>
+        <div class="logo-box">
+            <img class="logo" src="" alt="logo picture">
+            <section>
+                <h1 id="siteName">Temple Inn & Suites</h1>
+            </section>
+        </div>
+    </header>
+    <nav id="navigation">
+        <ul>
+            <li><a href="#" onclick="toggleMenu()">&#9776; Menu</a> </li>
+            <li><a href="/temple-inn/index.html" title="go to Home">Home</a></li>
+            <li><a href="/temple-inn/temple-inn.html" title="go to Temples">Temples</a></li>
+            <li><a href="/temple-inn/reservation.html" title="go to Reservation"></a>Reservation</li>
+            <li><a href="/temple-inn/service.html" title=>Services</a></li>
+            <li><a href="/temple-inn/contactus.html" title="go to Contact Us"></a>Contact Us</li>
+        </ul>
+    </nav>
+    <main id="home">
+            <div class="box">
+                    <div id="feedback"></div>
+                      <form action="" method="post">
+                        <div>
+                          <label for="name">Name:</label>
+                          <input type="text" id="name" name="user_name" required="required">
+                        </div>
+                        <div>
+                          <label for="mail">E-mail:</label>
+                          <input type="email" id="mail" name="user__mail" required="required">
+                        </div>
+                        <div>
+                            <label for="">Subject</label> 
+                            <input type="text" id="subject" required="required">
+                        </div>
+                        <div>
+                          <label for="msg">Message:</label>
+                          <textarea id="msg" name="user_message" required="required"></textarea>
+                        </div>
+                        <div class="button">
+                          <button type="submit">
+                            Send your Message
+                          </button>
+                        </div>
+                        </form>
+                        <script>
+                        // get the feedback div element so we can do something with it.
+                        const feedbackElement = document.getElementById('feedback');
+                        // get the form so we can read what was entered in it.
+                        const formElement = document.forms[0];
+                        // add a 'listener' to wait for a submission of our form. When that happens run the code below.
+                        formElement.addEventListener('submit', function(e) {
+                            // stop the form from doing the default action
+                            e.preventDefault();
+                            // set the contents of our feedback element to a message letting the user know the form was submitted successfully. Notice that we pull the name that was entered in the form to personalize the message!
+                            feedbackElement.innerHTML = 'Hello '+ formElement.user_name.value +'! Thank you for your message. We will get back with you as soon as possible!';
+                            // make the feedback element visible.
+                            feedbackElement.style.display = "block";
+                            // add a class to move everything down so our message doesn't cover it.
+                            document.body.classList.toggle('moveDown');
+                        });
+                    </script>
+    </main>
+    <footer>
+        &copy; 2019 | Temple Inn & Suites | <a href="/temple-inn/contactus.html">Contact Us</a>
+        <br>
+        Today's Date: <span id="currentdate"></span>
+    </footer>
+    <script></script>
+</body>
+</html>
