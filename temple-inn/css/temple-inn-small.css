@@ -1,18 +1,109 @@
 @import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Cinzel|Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Great+Vibes&display=swap');
 
 html {
     margin: 5px;
+    background-color: #A43312;
 }
 #siteName {
     font-family: 'Cinzel', serif;
     color: goldenrod;
 }
+nav button {
+    margin: 0.2rem 2%;
+    background-color: transparent;
+    border: none;
+    font-size: 1.6rem;
+    color: #1f3551;
+  
+}
+  a {
+      color: goldenrod;
+  }
+nav {
+    line-height: 3em;
+    text-align: center;
+    font-size: 1em;
+    border-radius: 3em;
+    font-family: 'Cinzel';
+}
+  
+.navigation {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+  
+.navigation li:first-child {
+    display: block;
+}
+  
+.navigation li {
+    display: none;
+}
+  
+  .navigation a {
+    display: block;
+    color: goldenrod;
+    padding: 0.75rem;
+    text-align: center;
+    text-decoration: none;
+}
+  
+  .navigation a:hover {
+    color: goldenrod;
+    background-color: #A43312;
+    font-weight: 300;
+    border-radius: 3em;
+}
 
 
+/* the onclick JS toggles the .repsonsive class from display none (.navigation li) to display block because the repsonsive class is added to the end of the class list like this in HTML Line #6.
+  <ul class="navigation responsive">
+  */
+  .responsive li {
+    display: block;
+  }
 
 
+main {
+background-color: white;
+margin:1.25rem auto;
+max-width: 1024px
+}
+
+h1 {
+    font-family: 'Cinzel', serif;
+}
+
+p {
+    font-family: 'Great Vibes', cursive;
+}
+
+footer {
+    padding: 0.5rem;
+    margin: 1rem;
+    color: goldenrod;
+    border-radius: 3em;
+    clear: both;
+    font-size: 1.2em;
+    display: grid;
+    grid-template-columns: repeat(1fr, 3);
+    grid-template-rows: 1fr 1fr;
+  }
+
+.txt {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.social {
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+
+/*index page images*/
 * {box-sizing:border-box}
 
 /* Slideshow container */
@@ -107,3 +198,74 @@ html {
   from {opacity: .4}
   to {opacity: 1}
 }
+
+#coming{
+  background-color: goldenrod;
+}
+
+.coming {
+  color: #A43312;
+}
+
+
+/* Temple page flip cards*/
+.flip-card-front img, .flip-card-back img {
+    max-width: 100%;
+  }
+  h1 article {
+    text-align:center;
+  }
+  .flip-card {
+    background-color: transparent;
+    width: 320px;
+    height: 375px;
+    perspective: 1000px;
+    padding:50px;
+   
+  }
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 1px 1px 4px 1px #888;
+    border-radius: 3px;
+  }
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  .flip-card-front h1, article {
+    text-align:center;
+    font-family:Baloo, Helvetica, sans-serief;
+  }
+  .flip-card-front {
+    background-color: #A43312;
+    color: goldenrod;
+  }
+  .flip-card-back {
+    background-color: #A43312;
+    color: goldenrod;
+    transform: rotateY(180deg);
+  }
+  .flip-card-back p, article {
+    font-family:PT-Sans-Narrow, Helvetica, serif;
+  }  
+
+
+/*reservation page*/
+    form *{
+      display: block;
+    }
+    input{
+      margin-bottom: .5rem;
+    }
+    .hide{
+      display: none;
+    }

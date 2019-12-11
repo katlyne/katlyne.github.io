@@ -1,0 +1,56 @@
+/* Desktop Views ****************************/
+@media only screen and (min-width: 1024px) {
+    
+      
+      .logo-box img {
+        max-width: 100px;
+      }
+      
+      nav ul {
+		list-style-type: none;
+		display: flex;
+		justify-content: space-evenly;
+	}
+
+	nav ul li a:hover {
+		background-color: #E7C24F;
+	}
+
+	nav ul li.active {
+		background-color: #E7C24F;
+	}
+
+	nav button {
+		display: none;
+	}
+
+	nav ul li a {
+		border: none;
+	}
+
+	nav ul {
+		margin-left: 2%;
+	}
+
+	nav ul.hide {
+		display: block;
+	}
+
+    footer{
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-around;
+      }
+      footer p {
+        margin-top:30px;
+      }
+    
+
+
+
+
+
+
+
+
+}
