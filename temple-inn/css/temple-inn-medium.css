@@ -10,5 +10,9 @@
     }
     #eventail {
         max-width: 100%;
-    }
+	}
+	footer {
+	display: grid;
+    grid-template-columns: 1fr 1fr
+	}
 }

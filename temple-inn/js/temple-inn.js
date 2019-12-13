@@ -1,65 +1,48 @@
 'use strict';
+
 /********************************
  Navigation
  ****************************** */
 // menu button
 function toggleMenu() {
-    document.getElementsByClassName("navigation")[0].classList.toggle("responsive");
-    }
+  document.getElementsByClassName("navigation")[0].classList.toggle("responsive");
+  }
 
-    var slideIndex = 0;
-    showSlides();
+/* *******************************************
+    Temple Page
+  ****************************************** */
+ function fetchtempleData(templeURL) {
+   let closure20191 = tahiti.closure.now.date[0];
+   console.log(closure20191);
+ }
     
-    function showSlides() {
-      var i;
-      var slides = document.getElementsByClassName("mySlides");
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1}
-      slides[slideIndex-1].style.display = "block";
-      setTimeout(showSlides, 4000); // Change image every 2 seconds
-    }
 
-    //Work with small screen menu
-const menuButton = document.querySelector("#menuBtn");
-menuButton.addEventListener('click', menuButton);
+
+
+
 
 /* *********************************************
     Reservation page
   ******************************************** */
-document.addEventListener("DOMContentLoaded", ()=>{
-  document.querySelector('#submit').addEventListener("click", processData);
-})
-
-let reservations = [];
-let processData = (event) => {
-  // stop the form from submitting
-  event.preventDefault();
-  let reservation = {
-  guests: document.querySelector('#guests').value,
-  resDate: document.querySelector('#resDate').value
-  }
-// adds reservation to the end of the array of all reservations
-reservations.push(reservation);
-// reset the first, and only, form
-document.forms[0].reset;
-// see results in console
-console.log('newRes', {reservations});
 
 
-  // Store to session Storage
-  window.sessionStorage.setItem("reservations", JSON.stringify(reservations));
-  // Retrieve from session storage
-  let resList = JSON.parse(window.sessionStorage.getItem("reservations"));
-  console.log(resList);
-  
-  // inject to the page
-const resDetails = document.querySelector("#resResult pre");
-resDetails.textContent = "\n" + JSON.stringify(reservations, "\t", 2);
-  
-// display the results
-document.querySelector("#resResult").classList.remove("hide");
 
-}
+/***********************************************
+ *              Contact Us Page
+ ********************************************** */
+
+// get the feedback div element so we can do something with it.
+const feedbackElement = document.getElementById('feedback');
+// get the form so we can read what was entered in it.
+const formElement = document.forms[0];
+// add a 'listener' to wait for a submission of our form. When that happens run the code below.
+formElement.addEventListener('submit', function(e) {
+    // stop the form from doing the default action
+    e.preventDefault();
+    // set the contents of our feedback element to a message letting the user know the form was submitted successfully. Notice that we pull the name that was entered in the form to personalize the message!
+    feedbackElement.innerHTML = 'Hello '+ formElement.user_name.value +'! Thank you for your message. We will get back with you as soon as possible!';
+    // make the feedback element visible.
+    feedbackElement.style.display = "block";
+    // add a class to move everything down so our message doesn't cover it.
+    document.body.classList.toggle('moveDown');
+});

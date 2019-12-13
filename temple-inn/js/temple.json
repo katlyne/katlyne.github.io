@@ -1,5 +1,5 @@
 {
-    "Tahiti": {
+    "tahiti": {
     
       "closure": {
           "now": {
@@ -26,7 +26,7 @@
         }
       }
     },
-    "Paris": {
+    "paris": {
       "closure": {
             "now": {
               "year":"2019",
@@ -48,7 +48,7 @@
             }
           }
         },
-        "Bern": {
+        "bern": {
           "closure": {
             "now": {
               "year":"2019",
@@ -69,7 +69,7 @@
             }
           }
         },
-        "Frankfurt": {
+        "frankfurt": {
           "closure": {
             "now": {
               "year":"2019",

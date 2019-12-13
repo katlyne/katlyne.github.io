@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Katlyne Chinain">
+    <title>Temples</title>
+    <link href="/css/normalize.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/temple-inn/img/icon/icon.jpeg" />
+    <link href="/temple-inn/css/temple-inn-small.css" rel="stylesheet" media="screen">
+    <link href="/temple-inn/css/temple-inn-medium.css" rel="stylesheet" media="screen and (min-width: 32.5em)">
+    <link href="/temple-inn/css/temple-inn-large.css" rel="stylesheet" media="screen and (min-width: 1024px)">
+</head>
+
+<body>
+    <header>
+        <div class="logo-box">
+            <img class="logo" src="/temple-inn/img/logo/logo.jpeg" alt="logo picture">
+            <section>
+                <h1 id="siteName">Temples Inn & Suites</h1>
+            </section>
+        </div>
+    </header>
+    <nav class="navigation">
+        <ul>
+            <li><a href="#" onclick="toggleMenu()" id="menuBtn">&#9776; Menu</a> </li>
+            <li><a href="/temple-inn/index.html" title="go to Home">Home</a></li>
+            <li><a href="/temple-inn/temples.html" title="go to Temples">Temples</a></li>
+            <li><a href="/temple-inn/reservation.html" title="go to Reservation">Reservation</a></li>
+            <li><a href="/temple-inn/service.html" title="go to services">Services</a></li>
+            <li><a href="/temple-inn/contactus.html" title="go to Contact Us">Contact Us</a></li>
+        </ul>
+    </nav>
+    <main id="home">
+
+        <h2 id="reservtitle">Make your Reservation</h2>
+        <h3 id="perso">Personal Informations</h3>
+        <form>
+            <label for="lname">Last Name</label>
+            <input id="lname" type="text" placeholder="Your lastname..." required="required">
+            <label for="fname">First Name</label>
+            <input id="fname" type="text" placeholder="Your firstname..." required="required">
+            <label for="emailaddress">Email Address*</label>
+            <input type="email" name="emailaddress" id="emailaddress" placeholder="Your email adress..." required="required">
+            <label for="phonenumber">Phone Number*</label>
+            <input type="tel" name="phonenumber" id="phonenumber" placeholder="Your phone number..." required="required">
+            <label for="country">Country</label>
+            <select id="country" placeholder="Your home country" required="required">
+            <option value="United States">United States</option>
+            <option value="France">France</option>
+            <option value="Germany">Germany</option>
+            <option value="Japan">Japan</option>
+            <option value="Italy">Italy</option>
+            <option value="Spain">Spain</option>
+            <option value="Russia">Russia</option> 
+            <option value="French Polynesia">French Polynesia</option>
+            <option value="Africa">Africa</option>
+            <option value="Australia">Aurstralia</option>
+        </select>
+        <label for="state">State</label>
+        <input id="state" type="text" placeholder="Your State..." required="required">
+        <label for="city">City</label>
+        <input id="city" type="text" placeholder="Your City..." required="required">
+        </form>
+        <h3 id="reserv">Reservation Informations</h3>
+        <form>
+            <label for="guests"># of Guests:</label>
+            <input id="guests" type="number" min="1" max="4">
+            <label for="temple"></label>
+            <label for="inDate">Check in:</label>
+            <input id="inDate" type="date">
+            <label for="outDate">Check out:</label>
+            <input id="outDate" type="date">
+            <label for="wish">Special Accommodations/Comments</label>
+            <input type="text" id="wish" placeholder="Any requirements or comments...">
+            <button id="submit">Submit</button>
+        </form>
+        <div id="resResult" class="hide">
+            <h2>Reservation Details</h2>
+            
+        </div>
+
+    </main>
+    <footer>
+        <div class="txt">
+            &copy; 2019 | Temple Inn & Suites | <a href="/temple-inn/contactus.html">Contact Us</a> | <a
+                href="/temple-inn/html/references.html">References</a> |
+        </div>
+        <div class="social">
+            <a href="https://www.facebook.com/" target="_blank"><img
+                    src="https://cdn.glitch.com/4e91f6af-72b3-4319-abc9-79cb97a8e4ec%2Ffacebook.png?1558028512892"
+                    alt="facebook logo"></a>
+            <a href="https://twitter.com/login?lang=fr" target="_blank"><img
+                    src="https://cdn.glitch.com/4e91f6af-72b3-4319-abc9-79cb97a8e4ec%2Ftwitter.png?1558028549484"
+                    alt="twittter logo"></a>
+            <a href="https://www.instagram.com/?hl=fr" target="_blank"><img
+                    src="https://cdn.glitch.com/4e91f6af-72b3-4319-abc9-79cb97a8e4ec%2Finstagram.png?1558028524897"
+                    alt="instagram logo"></a>
+        </div>
+    </footer>
+    <script src="/temple-inn/js/temple-inn.js"></script>
+</body>
+
+</html>

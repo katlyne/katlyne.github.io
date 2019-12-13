@@ -1,25 +1,33 @@
 @import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Great+Vibes&display=swap');
+@import "/css/normalize.css";
 
 html {
     margin: 5px;
     background-color: #A43312;
 }
+
 #siteName {
     font-family: 'Cinzel', serif;
-    color: goldenrod;
+    color: gold;
 }
+
+.logo {
+  max-width: 100px;
+}
+
 nav button {
     margin: 0.2rem 2%;
     background-color: transparent;
     border: none;
     font-size: 1.6rem;
     color: #1f3551;
+    text-align: center;
   
 }
   a {
-      color: goldenrod;
+      color: gold;
   }
 nav {
     line-height: 3em;
@@ -45,19 +53,46 @@ nav {
   
   .navigation a {
     display: block;
-    color: goldenrod;
+    color: gold;
     padding: 0.75rem;
     text-align: center;
     text-decoration: none;
 }
   
   .navigation a:hover {
-    color: goldenrod;
+    color: gold;
     background-color: #A43312;
     font-weight: 300;
     border-radius: 3em;
 }
 
+h2, h3, h4 {
+  font-family: 'Cinzel', serif;
+  color: #A43312;
+  border-top: 5px double;
+  border-bottom: 5px double;
+}
+main {
+  padding: 20px;
+}
+p {
+  font-family: "Great Vibes", cursive;
+}
+
+.action button {
+    line-height: 2em;
+    width: 7em;
+    background-color: #A43312;
+    font-size: 1.2em;
+}
+.action {
+    grid-column: 2/4;
+    grid-row: 1;
+    background-color: rgba(240, 240, 240, 0.8);
+    margin: 1em 3em;
+    padding: 1em;
+    text-align: center;
+}
 
 /* the onclick JS toggles the .repsonsive class from display none (.navigation li) to display block because the repsonsive class is added to the end of the class list like this in HTML Line #6.
   <ul class="navigation responsive">
@@ -70,7 +105,7 @@ nav {
 main {
 background-color: white;
 margin:1.25rem auto;
-max-width: 1024px
+max-width: 1024px;
 }
 
 h1 {
@@ -78,19 +113,16 @@ h1 {
 }
 
 p {
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Playfair display', serif;
 }
 
 footer {
     padding: 0.5rem;
     margin: 1rem;
-    color: goldenrod;
+    color: gold;
     border-radius: 3em;
     clear: both;
     font-size: 1.2em;
-    display: grid;
-    grid-template-columns: repeat(1fr, 3);
-    grid-template-rows: 1fr 1fr;
   }
 
 .txt {
@@ -199,15 +231,6 @@ footer {
   to {opacity: 1}
 }
 
-#coming{
-  background-color: goldenrod;
-}
-
-.coming {
-  color: #A43312;
-}
-
-
 /* Temple page flip cards*/
 .flip-card-front img, .flip-card-back img {
     max-width: 100%;
@@ -247,11 +270,11 @@ footer {
   }
   .flip-card-front {
     background-color: #A43312;
-    color: goldenrod;
+    color: gold;
   }
   .flip-card-back {
     background-color: #A43312;
-    color: goldenrod;
+    color: gold;
     transform: rotateY(180deg);
   }
   .flip-card-back p, article {
@@ -269,3 +292,13 @@ footer {
     .hide{
       display: none;
     }
+
+
+/* Contact Us Page */
+iframe {
+  max-width: 300px;
+}
+
+#merci {
+text-align: center;
+}
