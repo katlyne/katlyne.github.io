@@ -217,4 +217,11 @@
       max-width: 600px;
       grid-column: 1/2;
     }
+
+    .h {
+      display: flex;
+      max-width: 500px;
+      position: relative;
+      margin: auto;
+    }
 }
