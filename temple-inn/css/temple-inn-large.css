@@ -122,7 +122,6 @@
   }
 
 /*reservation page*/
-
 #f {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -168,9 +167,51 @@
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
-  
-  
-      
+  #s{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+  }
 
+  .servicetemp {
+    max-width: 600px;
+    grid-column: 1/2;
+  }
+#free {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;;
+}
+  .freeamendities {
+    max-width: 600px;
+    grid-column: 2/3;
+  }      
+  #miss {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+  }
+    .missionaries {
+      grid-column: 1/2;
+      max-width: 600px; 
+    }
+  .missimg {
+    grid-column: 2/3;
+    max-width: 600px;
+  }
+    
+    #rec {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    }
+    .reception {
+      grid-column: 2/3;
+      max-width: 600px;
+    } 
 
+    .recimg{
+      max-width: 600px;
+      grid-column: 1/2;
+    }
 }

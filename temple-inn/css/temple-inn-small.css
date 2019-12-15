@@ -20,6 +20,7 @@ header {
 }
 
 .logo {
+  display: flex;
   max-width: 100px;
   position: relative;
   left: 130px;
@@ -326,3 +327,7 @@ iframe {
 #merci {
 text-align: center;
 }
+.ce {
+  text-align: center;
+}
+/*temple page*/

@@ -61,4 +61,8 @@
 	box-shadow: 0 5px #666;
 	transform: translateY(4px);
 }
+body{
+	margin: 0;
+	border: none;
+}
 }
