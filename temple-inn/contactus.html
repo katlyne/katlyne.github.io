@@ -37,28 +37,30 @@
     <h2>Contact Us</h2>
     <div class="box">
       <div id="feedback"></div>
-      <form action="" method="post">
+      <form action="/temple-inn/contactreponse.html" method="post">
         <div>
           <label for="name">Name:</label>
-          <input type="text" id="name" name="user_name" placeholder="Your Name..." required>
+          <input type="text" id="fname" name="user_name" placeholder="Your Name..." required>
         </div>
+        <br>
         <div>
           <label for="mail">E-mail:</label>
-          <input type="email" id="mail" name="user__mail" placeholder="Your email..." required>
+          <input type="email" id="elec" name="user__mail" placeholder="Your email..." required>
         </div>
+        <br>
         <div>
-          <label for="">Subject</label>
+          <label for="subject">Subject</label>
           <input type="text" id="subject" placeholder="Subject" required="required">
         </div>
+        <br>
         <div>
           <label for="msg">Message:</label>
           <textarea id="msg" name="user_message" placeholder="What would you like to know?" required></textarea>
         </div>
+        <br>
         <div class="contactbutton">
-          <button type="submit">
-            <a href="/temple-inn/contactreponse.html">  </a>
+          <button id="submit">
             Send your Message
-          </a>
           </button>
         </div>
       </form>
@@ -85,6 +87,7 @@
     </div>
   </footer>
   <script src="/temple-inn/js/temple-inn.js"></script>
+  <script src="/sandbox/tmp.js"></script>
 </body>
 
 </html>

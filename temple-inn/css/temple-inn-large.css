@@ -117,9 +117,56 @@
     font-family: PT-Sans-Narrow, Helvetica, serif;
   }
 
+/*reservation page*/
 
+#f {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+}
+  .form1 {
+    grid-column: 1/2;
+    max-width: 500px; 
+  }
 
+  #form2 {
+    grid-column: 2/3;
+    max-width: 500px;
+  }
 
+ #reservtitle {
+  text-align: center;
+  }
+      input{
+        margin-bottom: .5rem;
+      }
+      .hide{
+        display: none;
+      }
+#submit {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #FFCE3D;
+  background-color: #73250D;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+#submit:hover {
+  background-color: #A43312
+}
+
+#submit:active {
+  background-color: #A43312;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+  
+  
+      
 
 
 }

@@ -60,19 +60,20 @@ nav {
 }
   
   .navigation a:hover {
-    color: #FFCE3D;
-    background-color: #73250D;
+    color: #73250D;
+    background-color:#FFCE3D;
     font-weight: 300;
     border-radius: 3em;
 }
 
 h2, h3, h4 {
   font-family: 'Cinzel', serif;
-  color: #A43312;
+  color: #73250D;
   border-top: 5px double;
   border-bottom: 5px double;
 }
 main {
+  background-color: white;
   padding: 20px;
 }
 p {
@@ -82,7 +83,7 @@ p {
 .action button {
     line-height: 2em;
     width: 7em;
-    background-color: #A43312;
+    background-color: #73250D;
     font-size: 1.2em;
 }
 .action {
@@ -100,13 +101,6 @@ p {
   .responsive li {
     display: block;
   }
-
-
-main {
-background-color: white;
-margin:1.25rem auto;
-max-width: 1024px;
-}
 
 h1 {
     font-family: 'Cinzel', serif;
@@ -283,18 +277,29 @@ footer {
 
 
 /*reservation page*/
-    form *{
-      display: block;
-    }
-    input{
-      margin-bottom: .5rem;
-    }
-    .hide{
-      display: none;
-    }
+#submit {
+  padding: 15px 25px;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #FFCE3D;
+  background-color: #73250D;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+#submit:hover {
+  background-color: #A43312
+}
 
-
+#submit:active {
+  background-color: #A43312;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px)
+}
 /* Contact Us Page */
+
 iframe {
   max-width: 300px;
 }

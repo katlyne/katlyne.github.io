@@ -33,19 +33,23 @@
             <li><a href="/temple-inn/contactus.html" title="go to Contact Us">Contact Us</a></li>
         </ul>
     </nav>
-    <main id="home">
-
-        <h2 id="reservtitle">Make your Reservation</h2>
-        <h3 id="perso">Personal Informations</h3>
-        <form>
+    <main id="reservcont">
+            <h2 id="reservtitle">Make your Reservation</h2>
+        <form id="f" class="reserv" action="/temple-inn/reservconf.html">
+            <div class="form1">
+            <h3 id="perso">Personal Informations</h3>
             <label for="lname">Last Name</label>
             <input id="lname" type="text" placeholder="Your lastname..." required>
+            <br>
             <label for="fname">First Name</label>
             <input id="fname" type="text" placeholder="Your firstname..." required>
+            <br>
             <label for="emailaddress">Email Address*</label>
             <input type="email" name="emailaddress" id="emailaddress" placeholder="Your email adress..." required>
+            <br>
             <label for="phonenumber">Phone Number*</label>
             <input type="tel" name="phonenumber" id="phonenumber" placeholder="Your phone number..." required>
+            <br>
             <label for="country">Country</label>
             <select id="country" placeholder="Your home country" required>
             <option value="United States">United States</option>
@@ -59,27 +63,66 @@
             <option value="Africa">Africa</option>
             <option value="Australia">Aurstralia</option>
         </select>
+        <br>
         <label for="state">State</label>
         <input id="state" type="text" placeholder="Your State..." required>
+        <br>
         <label for="city">City</label>
         <input id="city" type="text" placeholder="Your City..." required>
-        </form>
+    </div>
+    <div id="form2">
         <h3 id="reserv">Reservation Informations</h3>
-        <form>
-            <label for="guests"># of Guests:</label>
-            <input id="guests" type="number" min="1" max="4">
-            <label for="temple"></label>
+            <label for="temple">Temple:</label>
+            <select id="chosetemple" required>
+                <option value="Tahiti">Tahiti, French Polynesia</option>
+                <option value="Paris">Paris, France</option>
+                <option value="Frankfurt">Frankfurt, Germany</option>
+                <option value="Bern">Bern, Switzerland</option>
+            </select>
+            <br>
             <label for="inDate">Check in:</label>
             <input id="inDate" type="date">
+            <br>
             <label for="outDate">Check out:</label>
             <input id="outDate" type="date">
+            <br>
+            <label for="room">Type of Room:</label>
+            <select id="room" required>
+                <option value="King">A Regular room with one King Bed</option>
+                <option value="Queen">A Regular room with one Queen Bed</option>
+                <option value="kitchenKing">A room with one King Bed and a kitchenette</option>
+                <option value="kitchenQueen">A room with one Queen Bed and a kitchenette</option>
+                <option value="suiteKing">A suite with one King Bed, a kitchenette and a balcony</option>
+                <option value="suiteQueen">A suite with one Queen Bed, a kitchenette and a balcony</option>
+            </select>
+            <br>
+            <label for="numberroom">Number of Room:</label>
+            <input id="numberroom" type="number" min="1" max="4">
+            <br>
             <label for="wish">Special Accommodations/Comments</label>
             <input type="text" id="wish" placeholder="Any requirements or comments...">
-            <button id="submit">Submit</button>
-        </form>
-        <div id="resResult" class="hide">
-            <h2>Reservation Details</h2>
-            
+            <br>
+        </div>
+    </form>
+    <form action="">
+  <input type="submit" value="Submit" onclick="processReservationData()" id="submit">
+    </form>
+
+
+        <div id="resresult" class="hide">
+                <h2>Thank you for your reservation</h2>
+                <h3>Reservation Details</h3>
+           
+                <li id="nameconf" class="">Name: </li>
+                <li id="confemail"class="">Email Adress: </li>
+                <li id="conftel" class="">Phone Number: </li>
+                <li id="confloc" class="">From: </li>
+                <li id="conftemple" class="">Temple: </li>
+                <li id="checkinconf" class="">Check-in Date: </li>
+                <li id="checkoutconf" class="">Check-out Date</li>
+                <li id="confroom" class="">Type of Room: </v>
+                <li id="confnumberrooms" class="">Number of Room: </li>
+                <li id="confwish" class="">Special Accomodations or Comments: </li>
         </div>
 
     </main>
@@ -101,6 +144,7 @@
         </div>
     </footer>
     <script src="/temple-inn/js/temple-inn.js"></script>
+    <script src="/sandbox/tmp.js"></script>
 </body>
 
 </html>
