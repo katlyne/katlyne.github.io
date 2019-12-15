@@ -172,7 +172,10 @@
     grid-template-columns: 1fr 1fr;
     column-gap: 20px;
   }
-
+.serviceimg{
+  max-width: 600px;
+  grid-column:2/3 ;
+}
   .servicetemp {
     max-width: 600px;
     grid-column: 1/2;
