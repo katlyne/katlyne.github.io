@@ -1,4 +1,4 @@
-@media only screen and (min-width: 32.1em) {
+@media only screen and (min-width: 425px) {
 
 	.navigation li:first-child {
 		display: none;
@@ -7,7 +7,7 @@
 	.navigation li {
 		display: block;
 		flex: 1 1 100%;
-    }
+	}
     #eventail {
         max-width: 100%;
 	}
@@ -60,4 +60,5 @@
 	background-color: #A43312;
 	box-shadow: 0 5px #666;
 	transform: translateY(4px);
+}
 }

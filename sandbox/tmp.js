@@ -169,6 +169,7 @@ function displayClosureData() {
   console.log("Completed building lists of closure data.");
   */
 }
+
 /*
   function makeULFromArray (sourceArray, destination) {
     let containerId = "#" + destination; // build query selector for destination

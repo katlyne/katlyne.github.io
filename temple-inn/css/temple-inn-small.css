@@ -8,13 +8,21 @@ html {
     background-color: #73250D;
 }
 
+header {
+  display: grid;
+}
+
+
 #siteName {
     font-family: 'Cinzel', serif;
     color: #FFCE3D;
+    text-align: center;
 }
 
 .logo {
   max-width: 100px;
+  position: relative;
+  left: 130px;
 }
 
 nav button {
@@ -41,6 +49,8 @@ nav {
     list-style: none;
     text-align: center;
     padding: 0;
+    position: relative;
+    right: 20px;
 }
   
 .navigation li:first-child {
@@ -225,6 +235,12 @@ footer {
   to {opacity: 1}
 }
 
+.histoire {
+  display: block;
+  text-align: center;
+}
+
+
 /* Temple page flip cards*/
 .flip-card-front img, .flip-card-back img {
     max-width: 100%;
@@ -260,7 +276,7 @@ footer {
   }
   .flip-card-front h1, article {
     text-align:center;
-    font-family:Baloo, Helvetica, sans-serief;
+    font-family:'Cinzel', serief;
   }
   .flip-card-front {
     background-color: #73250D;
@@ -272,10 +288,13 @@ footer {
     transform: rotateY(180deg);
   }
   .flip-card-back p, article {
-    font-family:PT-Sans-Narrow, Helvetica, serif;
+    font-family:'Playfair display', serif;
+    font-size: 13px;
   }  
 
-
+#centre {
+  text-align: center;
+}
 /*reservation page*/
 #submit {
   padding: 15px 25px;

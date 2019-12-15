@@ -1,15 +1,19 @@
 /* Desktop Views ****************************/
 @media only screen and (min-width: 1024px) {
 
-  header {
-    display: grid;
-    grid-template-columns: auto;
-  }
 
-  .logo-box img {
-    max-width: 100px;
+  .logo {
+    top: 60px;
+    left: 0px;
   }
-
+  #siteName {
+    position: relative;
+    text-align: left;
+    left: 120px;
+  }
+ body {
+   margin: 0;
+ }
   nav ul {
     list-style-type: none;
     display: flex;
