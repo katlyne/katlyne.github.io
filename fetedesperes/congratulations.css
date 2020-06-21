@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+html {
+    background-color: coral;
+}
+header, main,{
+    margin: 1.25rem auto;
+    max-width: 760px;
+}
+header {
+    text-align: center;
+    font-family: 'Abril Fatface', cursive;
+    color: yellow;
+    font-size: 4em;
+    background-color: red;
+    
+}
+body {
+    max-width: 940px;
+    margin: 0 auto;
+    padding:1em;
+    background-color: white;
+    border-radius: 3em;
+}
+p {
+ color: darkred;
+ font-size: large;
+ font-family: 'Lora', serif;
+}
+.phone {
+    float:right;
+    margin: 10px;
+    margin-top: 1em;
+    max-width: 20em;
+}
+.camera {
+    float:left;
+    margin: 10px;
+    margin-top: 1em;
+    max-width: 20em;;
+}
+footer {
+    padding:0.5rem;
+    color: #1f3551;
+    text-align: left;
+    clear: both;
+    font-size: 1em;
+}
