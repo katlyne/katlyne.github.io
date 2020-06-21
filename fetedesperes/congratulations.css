@@ -4,7 +4,7 @@
 html {
     background-color: coral;
 }
-header, main,{
+header, main {
     margin: 1.25rem auto;
     max-width: 760px;
 }
