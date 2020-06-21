@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home katlyne.github.io</title>
+    <title data-city="Preston" id="title">Preston, Idaho</title>
     <meta name="author" content="Katlyne Chinain">
     <meta name="description" content="Preston">
     <link href="/css/normalize.css" rel="stylesheet">
     <link rel="shortcut icon" href="/weather/location/images/icon.ico" />
-    <link href="/weather/location/css/small.css" rel="stylesheet" media="screen">
+    <link href="/weather/location/css/small-min.css" rel="stylesheet" media="screen">
     <link href="/weather/location/css/medium.css" rel="stylesheet" media="screen and (min-width: 32.5em)">
-    <link href="/weather/location/css/large.css" rel="stylesheet" media="screen and (min-width: 1024px)">
+    <link href="/weather/location/css/large-min.css" rel="stylesheet" media="screen and (min-width: 1024px)">
     <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet">
-    <script src="/weather/location/js/functions.js" async></script>
+    <script src="/weather/location/js/funct.js" async></script>
 </head>
 
 <body id="home">
@@ -29,29 +29,32 @@
                 </section>
             </div>
         </header>
-        <nav>
+        <nav id="nav">
 
             <ul class="navigation">
                 <li><a href="#" onclick="toggleMenu()">&#9776; Menu</a> </li>
-                <li><a href="/index.html" title="go to Home">Home</a></li>
+                <li><a href="/weather/location/index.html" title="go to Home">Home</a></li>
                 <li><a href="/weather/location/preston.html" title="go to Preston page">Preston</a></li>
                 <li><a href="/weather/location/sodasprings.html" title="go to Soda Springs">Soda Springs</a></li>
                 <li><a href="/weather/location/fishhaven.html" title="go to Fish Haven">Fish Haven</a></li>
                 <li><a href="/weather/location/stormcenter.html" title="go to Storm Center">Storm Center</a></li>
                 <li><a href="/weather/location/gallery.html" title="go to Gallery">Gallery</a></li>
+                
             </ul>
         </nav>
-        <main class="main-container">
-                <h2>Preston</h2>
+        <section id="status">Please be patient while I get your weather information.</section>
+
+        <main id="main-container" class="hide">
+                <h2 id="contentHeading">Preston</h2>
                 <h3>GPS Coordinates</h3>
-                <p>42.0963° N, 111.8766° W</p>
+                <p id="latLong">42.0963° N, 111.8766° W</p>
             <section id="currweather">
                 <section class="current">
                     <div id="currenthotdegree">58&#176;</div>
                     <div id="currentdegree">10&#8457;</div>
                     <div id="currentcolddegree">34&#176;</div>
-                    <div id="wind"><span class="wi wi-strong-wind"></span> 25mph</div>
-                    <div id="feels">Feels like: <span id="windchill"></span></div>
+                    <div id="speed"> 25mph</div>
+                    <div id="feels">Feels like: </div>
                     <div id="gusts">Gusts: 8mph</div>
                 </section>
                 <div class="boites">
@@ -90,8 +93,8 @@
                         
                     </section>
                     <section class="precipitation">
-                        <h3>Precipitation</h3>
-                        <section id="precipitation">
+                        <h3>Wind</h3>
+                        <section id="wind">
                             <div class="circle">
                             <div class="o1">20</div>
                             <div class="o2">20</div>
@@ -165,8 +168,7 @@
             <br>
             Last uptated: <span id="lastModified"></span>
 	    </footer>
-        <script src="/weather/location/js/currentdate.js"></script>
-        <script src="/weather/location/js/functions.js"></script>
+        <script src="/weather/location/js/funct.js"></script>
     </div>
 </body>
 

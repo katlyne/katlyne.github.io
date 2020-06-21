@@ -168,6 +168,7 @@ nav {
   border-radius: 1em;
   padding: 4em;
   display: block;
+  background-color: rgba(255,255,255,.5);
 }
 /*
 #current {
@@ -194,7 +195,7 @@ nav {
   font-size: 30px;
   color:#0056BF;
   position: absolute; 
-  left: 180px;
+  left: 190px;
   top:60px;
   
 }
@@ -213,7 +214,7 @@ nav {
   top: 120px;
   left: 320px;
 }
-#wind {
+#speed {
   font-family: 'Baloo', 'Helvetica', 'sans-serif';
   position: absolute;
   top: 100px;
@@ -229,9 +230,10 @@ nav {
 
 /* Boxes for temperature, etc*/
 .boites {
-  max-width: 775px;
+  max-width: 1000px;
   margin: 1.3em auto 1.3em auto;
   border-radius: 1em;
+  
 }
 
 .boites section {
@@ -258,7 +260,15 @@ nav {
   margin: 0.5rem;
   border-radius: 1em;
 }
-
+.temperatures {
+  background-color: rgba(255,255,255,.5);
+}
+.precipitation {
+  background-color: rgba(255,255,255,.5);
+}
+.conditions {
+  background-color: rgba(255,255,255,.5);
+}
 #siteName {
 font-size: 4vw;
     
@@ -270,7 +280,7 @@ font-size: 4vw;
   }
 
   /*Precipitation Informations*/
-  #precipitation {
+  #wind {
     position: relative;
     font-size: 20px;
     border: none;
@@ -597,65 +607,77 @@ left:65px;
   left: 65px;
 }
 
-.o1 {
+#conditions .o1 {
 position: absolute;
-top: -30px;
-left: 120px;
+top: -45px;
+left: 115px;
+max-width: 10%;
 }
-.o2 {
+#conditions .o2 {
 position: absolute;
-top: 5px;
+top: -10px;
 left: 170px; 
+max-width: 10%;
 }
-.o3 {
+#conditions .o3 {
 position: absolute;
-top: 70px;
+top: 60px;
 left: 180px;
+max-width: 10%;
 }
-.o4 {
+#conditions .o4 {
 position: absolute;
-top: 140px;
-left: 170px;    
+top: 120px;
+left: 170px;  
+max-width: 10%;  
 }
-.o5 {
+#conditions .o5 {
+position: absolute;
+top: 168px;
+left: 120px;
+max-width: 10%;
+}
+#conditions .o6 {
 position: absolute;
 top: 175px;
-left: 125px;
+left:65px;
+max-width: 10%;  
 }
-.o6 {
-position: absolute;
-top: 180px;
-left:70px;  
-}
-.o7 {
+#conditions .o7 {
 position: absolute;
 top: 165px;
 left: 10px;
+max-width: 10%;
 }
-.o8 {
+#conditions .o8 {
 position: absolute;
-top: 125px;
-left: -25px;    
+top: 120px;
+left: -40px; 
+max-width: 10%;   
 }
-.o9 {
+#conditions .o9 {
 position: absolute;
-top: 70px;
-left: -35px;
+top: 55px;
+left: -50px;
+max-width: 10%;
 }
-.o10 {
+#conditions .o10 {
 position: absolute;
-top: 15px;
-left: -25px;
+top: -2px;
+left: -40px;
+max-width: 10%;
 }
-.o11 {
+#conditions .o11 {
 position: absolute;
-top: -20px;
-left: 10px;   
+top: -45px;
+left: 5px; 
+max-width: 10px;  
 }
-.o12 {
+#conditions .o12 {
 position: absolute;
-top: -35px;
-left: 70px;
+top: -55px;
+left: 60px;
+max-width: 10%;
 }
 .i1 {
 position: absolute;
@@ -724,6 +746,7 @@ left:70px;
   left:65px;
   }
 
+
   /* ******************* End CSS Position*********************** */
 
 
@@ -754,4 +777,12 @@ left:70px;
   .clouds {
     background-image: url("/weather/location/images/lazy/clouds-small.jpg");
   }
-  
+
+  /*Fetch activity*/
+  .hide {
+    display: none;
+  }
+  /* Constrain condition images */
+#conditions img{
+  max-width: 40px;
+}

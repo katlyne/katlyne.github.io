@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="author" content="Katlyne Chinain">
+  <title>contact</title>
+  <link href="/css/normalize.css" rel="stylesheet">
+  <link rel="shortcut icon" href="/temple-inn/img/icon/icon.jpeg" />
+  <link href="/temple-inn/css/temple-inn-small.css" rel="stylesheet" media="screen">
+  <link href="/temple-inn/css/temple-inn-medium.css" rel="stylesheet" media="screen and (min-width: 32.5em)">
+  <link href="/temple-inn/css/temple-inn-large.css" rel="stylesheet" media="screen and (min-width: 1024px)">
+</head>
+
+<body>
+  <header>
+    <div class="logo-box">
+      <img class="logo" src="/temple-inn/img/logo/logo.jpeg" alt="logo picture">
+      <section>
+        <h1 id="siteName">Temples Inn & Suites</h1>
+      </section>
+    </div>
+  </header>
+  <nav class="navigation">
+    <ul>
+      <li><a href="#" onclick="toggleMenu()" id="menuBtn">&#9776; Menu</a> </li>
+            <li><a href="/temple-inn/index.html" title="go to Home">Home</a></li>
+            <li><a href="/temple-inn/temples.html" title="go to Temples">Temples</a></li>
+            <li><a href="/temple-inn/reservation.html" title="go to Reservation">Reservation</a></li>
+            <li><a href="/temple-inn/service.html" title="go to services">Services</a></li>
+            <li><a href="/temple-inn/contactus.html" title="go to Contact Us">Contact Us</a></li>
+    </ul>
+  </nav>
+  <main id="home">
+    <h2>Contact Us</h2>
+    <div class="box">
+      <div id="feedback"></div>
+      <form action="/temple-inn/contactreponse.html" method="post">
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="user_name" placeholder="Your Name..." required>
+        </div>
+        <br>
+        <div>
+          <label for="mail">E-mail:</label>
+          <input type="email" id="mail" name="user__mail" placeholder="Your email..." required>
+        </div>
+        <br>
+        <div>
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" placeholder="Subject" required="required">
+        </div>
+        <br>
+        <div>
+          <label for="msg">Message:</label>
+          <textarea id="msg" name="user_message" placeholder="What would you like to know?" required></textarea>
+        </div>
+        <br>
+        <form action="/temple-inn/contactreponse.html" class="contactbutton">
+          <button id="submit">
+            Send your Message
+          </button>
+        </form>
+      </form>
+      <h2>Our Location</h2>
+      <p>Our company headquarter address is at 4800 Montgomery Ln #300, Bethesda, MD 20814</p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3101.4050188057963!2d-77.0977205!3d38.9832518!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7c97b6b3b5b43%3A0x9c8eb1c5547b83eb!2s4800%20Montgomery%20Ln%20%23300%2C%20Bethesda%2C%20MD%2020814!5e0!3m2!1sen!2sus!4v1576092436550!5m2!1sen!2sus" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+      
+  </main>
+  <footer>
+    <div class="txt">
+      &copy; 2019 | Temple Inn & Suites | <a href="/temple-inn/contactus.html">Contact Us</a> | <a
+        href="/temple-inn/html/references.html">References</a> |
+    </div>
+    <div class="social">
+      <a href="https://www.facebook.com/" target="_blank"><img
+          src="https://cdn.glitch.com/4e91f6af-72b3-4319-abc9-79cb97a8e4ec%2Ffacebook.png?1558028512892"
+          alt="facebook logo"></a>
+      <a href="https://twitter.com/login?lang=fr" target="_blank"><img
+          src="https://cdn.glitch.com/4e91f6af-72b3-4319-abc9-79cb97a8e4ec%2Ftwitter.png?1558028549484"
+          alt="twittter logo"></a>
+      <a href="https://www.instagram.com/?hl=fr" target="_blank"><img
+          src="https://cdn.glitch.com/4e91f6af-72b3-4319-abc9-79cb97a8e4ec%2Finstagram.png?1558028524897"
+          alt="instagram logo"></a>
+    </div>
+  </footer>
+  <script src="/temple-inn/js/temple-inn.js"></script>
+  <script src="/sandbox/tmp.js"></script>
+</body>
+
+</html>

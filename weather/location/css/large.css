@@ -113,7 +113,7 @@
 	top: 130px;
 	left: 320px;
   }
-  #wind {
+  #speed {
 	font-family: 'Baloo', 'Helvetica', 'sans-serif';
 	position: absolute;
 	top: 180px;
@@ -151,3 +151,7 @@
     background-image: url("/weather/location/images/lazy/clouds-large.jpg");
   }
 }
+/* Constrain condition images */
+#conditions img{
+	max-width: 40px;
+  }

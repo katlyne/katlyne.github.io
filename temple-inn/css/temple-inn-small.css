@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes&display=swap');
+@import "/css/normalize.css";
+
+html {
+    margin: 5px;
+    background-color: #73250D;
+}
+
+header {
+  display: grid;
+}
+
+
+#siteName {
+    font-family: 'Cinzel', serif;
+    color: #FFCE3D;
+    text-align: center;
+}
+
+.logo {
+  display: flex;
+  max-width: 100px;
+  position: relative;
+  left: 130px;
+}
+
+nav button {
+    margin: 0.2rem 2%;
+    background-color: transparent;
+    border: none;
+    font-size: 1.6rem;
+    color: #1f3551;
+    text-align: center;
+  
+}
+  a {
+      color: #FFCE3D;
+  }
+nav {
+    line-height: 3em;
+    text-align: center;
+    font-size: 1em;
+    border-radius: 3em;
+    font-family: 'Cinzel';
+}
+  
+.navigation {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    position: relative;
+    right: 20px;
+}
+  
+.navigation li:first-child {
+    display: block;
+}
+  
+.navigation li {
+    display: none;
+}
+  
+  .navigation a {
+    display: block;
+    color: #FFCE3D;
+    padding: 0.75rem;
+    text-align: center;
+    text-decoration: none;
+}
+  
+  .navigation a:hover {
+    color: #73250D;
+    background-color:#FFCE3D;
+    font-weight: 300;
+    border-radius: 3em;
+}
+
+h2, h3, h4 {
+  font-family: 'Cinzel', serif;
+  color: #73250D;
+  border-top: 5px double;
+  border-bottom: 5px double;
+}
+main {
+  background-color: white;
+  padding: 20px;
+}
+p {
+  font-family: "Great Vibes", cursive;
+}
+
+.action button {
+    line-height: 2em;
+    width: 7em;
+    background-color: #73250D;
+    font-size: 1.2em;
+}
+.action {
+    grid-column: 2/4;
+    grid-row: 1;
+    background-color: rgba(240, 240, 240, 0.8);
+    margin: 1em 3em;
+    padding: 1em;
+    text-align: center;
+}
+
+/* the onclick JS toggles the .repsonsive class from display none (.navigation li) to display block because the repsonsive class is added to the end of the class list like this in HTML Line #6.
+  <ul class="navigation responsive">
+  */
+  .responsive li {
+    display: block;
+  }
+
+h1 {
+    font-family: 'Cinzel', serif;
+}
+
+p {
+    font-family: 'Playfair display', serif;
+}
+
+footer {
+    padding: 0.5rem;
+    margin: 1rem;
+    color: #FFCE3D;
+    border-radius: 3em;
+    clear: both;
+    font-size: 1.2em;
+  }
+
+.txt {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.social {
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+
+.histoire {
+  display: block;
+  text-align: center;
+}
+
+
+/* Temple page flip cards*/
+.flip-card-front img, .flip-card-back img {
+    max-width: 100%;
+  }
+  h1 article {
+    text-align:center;
+  }
+  .flip-card {
+    background-color: transparent;
+    width: 320px;
+    height: 375px;
+    perspective: 1000px;
+    padding:50px;
+   
+  }
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 1px 1px 4px 1px #888;
+    border-radius: 3px;
+  }
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  .flip-card-front h1, article {
+    text-align:center;
+    font-family:'Cinzel', serief;
+  }
+  .flip-card-front {
+    background-color: #73250D;
+    color: #FFCE3D;
+  }
+  .flip-card-back {
+    background-color: #73250D;
+    color: #FFCE3D;
+    transform: rotateY(180deg);
+  }
+  .flip-card-back p, article {
+    font-family:'Playfair display', serif;
+    font-size: 13px;
+  }  
+
+#centre {
+  text-align: center;
+}
+/*reservation page*/
+#submit {
+  padding: 15px 25px;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #FFCE3D;
+  background-color: #73250D;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+#submit:hover {
+  background-color: #A43312
+}
+
+#submit:active {
+  background-color: #A43312;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px)
+}
+/* Contact Us Page */
+
+iframe {
+  max-width: 300px;
+}
+
+#merci {
+text-align: center;
+}
+.ce {
+  text-align: center;
+}
+/*temple page*/
+.h{
+  max-width: 300px;
+}
+.serviceimg {
+  max-width: 300px;
+}
+.freeimg {
+  max-width: 300px;
+}
+.missimg {
+  max-width: 300px;
+}
+.recimg {
+  max-width: 300px;
+}
